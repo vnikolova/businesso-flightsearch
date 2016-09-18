@@ -1,10 +1,8 @@
 * {
   margin: 0;
+  border-radius: 0 !important;
 }
 
-a {
-	text-decoration: none;
-}
 
 .glyphicon {
 	text-decoration: none;
@@ -54,9 +52,7 @@ html, body {
 
 #blue{
 	background-color: mediumturquoise;
-	-webkit-box-shadow: 0 8px 6px -6px #ccc;
-	   -moz-box-shadow: 0 8px 6px -6px #ccc;
-	        box-shadow: 0 8px 6px -6px #ccc;
+  padding: 10px;
 }
 
 #grey{
@@ -75,4 +71,12 @@ html, body {
 
 .text-right{
 	text-align: right;
+}
+.flight-section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.btn-select {
+  display: none;
+  width: 100%;
 }
