@@ -4,9 +4,9 @@
     <title>Businesso - Your business travels organized.</title>
     <link href="css/prettify.css" rel="stylesheet" />
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="css/demo.css" rel="stylesheet">
-    <link href="css/logo-nav.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
@@ -67,14 +67,14 @@
                              <!-- departure date -->
                              <div class="inner-addon left-addon">
                               <img src="img/calendar.png" class="glyphicon">
-                                <input id="depart" class="datepicker form-control" value="" name="startdate" default="2013-05-21" data-date="2013-05-21" data-behavior="datepicker" placeholder="dd/mm/yy " style="width:150px; height:55px;">                           
+                                <input id="depart" class="datepicker form-control" value="" name="startdate" default="2013-05-21" data-date="2013-05-21" data-behavior="datepicker" placeholder="dd/mm/yy " style="width:150px; height:55px;">
                             </div>
                         </div>
                         <div class="form-group">
                              <!-- arrival date -->
                              <div class="inner-addon left-addon">
                               <img src="img/calendar.png" class="glyphicon">
-                                <input id="arrive" class="datepicker form-control" value="" name="startdate" default="2013-05-21" data-date="2013-05-21" data-behavior="datepicker" placeholder="dd/mm/yy " style="width:150px;height:55px;">                           
+                                <input id="arrive" class="datepicker form-control" value="" name="startdate" default="2013-05-21" data-date="2013-05-21" data-behavior="datepicker" placeholder="dd/mm/yy " style="width:150px;height:55px;">
                             </div>
                         </div>
                          <!-- passangers -->
@@ -117,7 +117,7 @@
                              <!-- departure date -->
                              <div class="inner-addon left-addon">
                               <img src="img/calendar.png" class="glyphicon">
-                                <input id="depart" class="datepicker form-control" value="" name="startdate" default="2013-05-21" data-date="2013-05-21" data-behavior="datepicker" placeholder="dd/mm/yy " style="width:150px; height:55px;">                           
+                                <input id="depart" class="datepicker form-control" value="" name="startdate" default="2013-05-21" data-date="2013-05-21" data-behavior="datepicker" placeholder="dd/mm/yy " style="width:150px; height:55px;">
                             </div>
                         </div>
                          <!-- passangers -->
@@ -138,10 +138,10 @@
                  <!-- search btn -->
                 <button type="button" class="btn form-control searchBtn">SEARCH</button>
                  </div><!-- end of return-->
-            </div>     
+            </div>
           </div>
         </div>
-      </div> 
+      </div>
       <div class="panel-footer">
         <p style="text-align:center; padding:15px;">Copyright &copy; Businesso 2016 Copenhagen</p>
         <div id="footer" style="margin-top:-20px;">
@@ -149,12 +149,12 @@
             <a href="#"> FAQ </a>|
             <a href="#"> About </a>
         </div>
-    </div> 
     </div>
-    
+    </div>
+
 <!-- jquery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
-<!-- typeahead plugin -->   
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!-- typeahead plugin -->
 <script src="js/bootstrap-typeahead.js" type="text/javascript"></script>
 <!-- cities list -->
 <script src="js/demo.js" type="text/javascript"></script>
@@ -190,7 +190,7 @@ $(function() {
 
 });
 
-// search destination 
+// search destination
 var substringMatcher = function(strs) {
   return function findMatches(q, cb) {
     var matches, substrRegex;
