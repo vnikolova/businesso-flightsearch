@@ -134,6 +134,7 @@ height:50px;
 
 .title{
 	margin-top: 100px;
+  text-align: center;
 }
 .footer, .push {
 height: 5em;
