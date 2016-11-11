@@ -297,3 +297,15 @@ ul.breadcrumbs{
     text-align:center;
     line-height:30px;
 }
+h2{
+  letter-spacing: 1px;
+}
+h5{
+  text-align: center;
+}
+.savedCardInfo{
+  font-size:20px;
+}
+.paypalImage{
+  padding:10px;
+}

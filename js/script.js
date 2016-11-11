@@ -300,13 +300,13 @@
     });
   };
 
-  rng.addEventListener("mousedown", function() {
-    listener();
-    rng.addEventListener("mousemove", listener);
-  });
-  rng.addEventListener("mouseup", function() {
-    rng.removeEventListener("mousemove", listener);
-  });
+  // rng.addEventListener("mousedown", function() {
+  //   listener();
+  //   rng.addEventListener("mousemove", listener);
+  // });
+  // rng.addEventListener("mouseup", function() {
+  //   rng.removeEventListener("mousemove", listener);
+  // });
 
   // plus baggage btn
   $(document).on("click", ".plusBaggageBtn", function(){
@@ -341,9 +341,11 @@
     $(".paymentCrumb").css({"font-weight": "800", "font-size": "130%"});
   });
 
-  // save btn -> go to search page
-  $(document).on("click", ".saveBtn", function(){
-     window.location.assign("search.html");
+  $("#popover").popover({ trigger: "hover" });
+
+  // sumbit payment 
+  $(document).on("click", "#submitPaymentBtn", function(){
+     window.location.assign("confirmation.html");
   });
 
-$("#popover").popover({ trigger: "hover" });
+
