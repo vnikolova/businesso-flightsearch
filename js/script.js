@@ -268,11 +268,82 @@
       cb(matches);
     };
   };
-  
-
 
   // results go back 
   $("#backToSearchBtn").click(function(){
        window.location.assign("search.html");
   });
 
+  ////////////////////////// ACCOUNT SETTINGS ///////////////////////////
+   $(".personalCrumb").css({"color:": "black"});
+  // next btn to prefered destination
+  $(document).on("click", ".nextToPreferedDes", function(){
+    $(".personalInformation").hide();
+    $(".flightDestination").show();
+    $(".personalCrumb").css({"color:": "black"});
+    $(".flightDesCrumb").css({"font-weight": "800", "font-size": "130%"});
+  });
+
+  // next btn to accomodation
+  $(document).on("click", ".nextToAccomodation", function(){
+    $(".flightDestination").hide();
+    $(".accomodation").show();
+    $(".flightDesCrumb").css({"font-weight": "400", "font-size": "100%"});
+    $(".accomodationCrumb").css({"font-weight": "800", "font-size": "130%"});
+  });
+
+  // price bar
+  var rng = document.querySelector("#range");
+  var listener = function() {
+    window.requestAnimationFrame(function() {
+      document.querySelector(".price").innerHTML = rng.value + " &euro;";
+    });
+  };
+
+  rng.addEventListener("mousedown", function() {
+    listener();
+    rng.addEventListener("mousemove", listener);
+  });
+  rng.addEventListener("mouseup", function() {
+    rng.removeEventListener("mousemove", listener);
+  });
+
+  // plus baggage btn
+  $(document).on("click", ".plusBaggageBtn", function(){
+    console.log("x");
+    $(".addBaggage").hide();
+    $(".baggageAdded").show();
+    $(".plusBaggageBtn").hide();
+  });
+
+  // plus meal btn
+  $(document).on("click", ".plusMealBtn", function(){
+    // console.log("x");
+    $(".addMeal").hide();
+    $(".mealAdded").show();
+    $(".plusMealBtn").hide();
+  });
+
+  // next btn to services
+  $(document).on("click", ".nextToServices", function(){
+    $(".accomodation").hide();
+    $(".services").show();
+    $(".accomodationCrumb").css({"font-weight": "400", "font-size": "100%"});
+    $(".servicesCrumb").css({"font-weight": "800", "font-size": "130%"});
+  });
+
+  // next to payment
+  $(document).on("click", ".nextToPayment", function(){
+    console.log("x");
+    $(".services").hide();
+    $(".payment").show();
+    $(".servicesCrumb").css({"font-weight": "400", "font-size": "100%"});
+    $(".paymentCrumb").css({"font-weight": "800", "font-size": "130%"});
+  });
+
+  // save btn -> go to search page
+  $(document).on("click", ".saveBtn", function(){
+     window.location.assign("search.html");
+  });
+
+$("#popover").popover({ trigger: "hover" });
