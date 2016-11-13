@@ -1,64 +1,59 @@
+<?php
+session_start();
+if(isset($_SESSION['username'])) {
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Businesso - Your business travels organized.</title>
     <!-- Latest compiled and minified CSS -->
-   <!--  <link rel="stylesheet" type="text/css" href="css/style.min.css"> -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
-    <link rel="stylesheet" type="text/css" href="css/scrolling-nav.css">
-
-    <style>
-
-
-
-
-
-    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.min.css">
 </head>
+
 <body>
-
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top top-nav-collapse" role="navigation">
-        <div class="container">
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <label href="#page-top"><img id="logo" src="./img/paper-airplane-icon.png" /><a class="navbar-brand page-scroll"></a>BUSINESSO</label>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li><a href="#"><span class="glyphicon glyphicon-user welcomeUser"></span> <span id="displayedUser"></span></a></li>
+  <!-- Navigation -->
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container wraper">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <p class="logoTxtProfile">
+            <img src="img/paper-airplane-icon.png" alt="businesso_logo"> Businesso
+          </p>
+        </a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user welcomeUser"></span> <span id="displayedUser"></span></a></li>
         <li>
           <div class="dropdown">
             <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
             <span class="caret"></span></button>
             <ul class="dropdown-menu">
               <li><a href="#"data-toggle="modal" data-target="#myModal">My Profile</a></li>
-              <li><a href="index.html" id="logOutBtn" >Log Out</a></li>
+              <li><a href="login.html" id="logOutBtn" >Log Out</a></li>
             </ul>
           </div>
         </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+      </ul> <!-- end of the right nav bar -->
+    </div>
+  </nav> <!-- Navigation END --> <br><br><br>
+
  <!-- search results -->
+      <div class="container" id="">
+        <!-- breadcrumb -->
+        <div class="container" style="margin-top: 50px;">
+          <ol class="breadcrumb breadcrumb-arrow">
+          <li><a href="#">Search</a></li>
+          <li><a href="#">Select Flight</a></li>
+          <li class="active"><span>Overview</span></li>
+        </ol>
+        <div class="btn btn-info" id="backToSearchResultsBtn">
+          Go Back
+        </div>
 
-
-
+      </div> <!-- end of the search results -->
 
    <!-- Page Content -->
 <section id="services" class="services-section">
@@ -224,12 +219,12 @@
          <div class="col-lg-2 col-lg-offset-2">
             <h4><strong>1025 Dkk</strong></h4>
          </div>
-        
+
       </div>
 <div class="row">
 <div class="col-sm-4 col-sm-offset-4">
-   <button class="btn btn-default" id="prefButton" data-toggle="modal" data-target="#confirmation" >Purchase</button> 
-   <button class="btn btn-default backToSearch" id="backToSearchResultsBtn">Back to flight search</button> 
+   <button class="btn btn-default" id="prefButton" data-toggle="modal" data-target="#confirmation" >Purchase</button>
+   <button class="btn btn-default backToSearch" id="backToSearchResultsBtn">Back to flight search</button>
 </div>
 <br>
 </div>
@@ -276,7 +271,7 @@
       </div>
     </div>
 </div>
-</div> 
+</div>
 
 <!-- Modal Seat picker-->
    <div class="modal fade" id="seatPickerModal" role="dialog">
@@ -294,14 +289,14 @@
         </div>
       </div>
     </div>
-  </div>  
+  </div>
 </div>
 
 <!-- Modal Confirmation -->
  <!-- Modal -->
   <div class="modal fade" id="confirmation" role="dialog">
     <div class="modal-dialog">
-    
+
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
@@ -322,7 +317,7 @@
           <button type="button" class="btn btn-default" data-dismiss="modal">Confirm</button>
         </div>
       </div>
-      
+
     </div>
   </div>
   </section>
@@ -333,7 +328,7 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
- <script src="js/script.min.js">
+<script src="js/script.min.js">
  </script>
 <script type="text/javascript">
     $("#prefButtonSet").click(function(){
@@ -353,3 +348,8 @@ function showPage() {
 
 </body>
 </html>
+<?php
+} else {
+    header("location:login.html");
+}
+?>
