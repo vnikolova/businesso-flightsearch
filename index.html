@@ -31,13 +31,14 @@ background-color: #222222;
       <!-- login -->
       <div id="login">
         <div class="box">
+          <form id="loginForm" action="./"  method="post" name="loginForm">
           <br>
-          <!-- username -->
+          <!-- email -->
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon" id="basic-addon1">
                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
-              <input type="text" id="usernameLog" required class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+              <input type="text" id="emailLogin"  class="form-control" placeholder="Email" aria-describedby="basic-addon1" required>
             </div>
           </div>
           <!-- password -->
@@ -45,13 +46,14 @@ background-color: #222222;
             <div class="input-group">
               <span class="input-group-addon" id="basic-addon1">
                 <span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
-              <input type="password" id="passwordLog" required class="form-control" placeholder="Password" aria-describedby="basic-addon1">
+              <input type="password" id="passwordLogin" required class="form-control" placeholder="Password" aria-describedby="basic-addon1" required>
             </div>
           </div>
            <!-- login -->
           <div class="form-group">
-            <button type="button" class="btn form-control buttons" id="signUpBtn"><span class="loginBtnTxt">SIGN IN</span></button>
+            <button type="button" class="btn form-control buttons" id="loginSubmit"><span class="loginBtnTxt">SIGN IN</span></button>
           </div>
+        </form>
       </div>
       <!-- register bottom -->
       <div class="btn-group btn-group-justified" role="group" aria-label="...">
@@ -63,21 +65,27 @@ background-color: #222222;
 
   <!-- register -->
       <div id="register">
-        <div class="box">
+        <div class="box ">
+          <form id="registerForm" action="./"  method="post" name="registerForm">
           <br>
-          <!-- username -->
+          <!-- first and last name -->
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon" id="basic-addon1">
                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
-              <input type="text" id="username" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+              <input type="text" name="firstName" class="form-control" placeholder="First Name" aria-describedby="basic-addon1" required>
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+              <input type="text" name="lastName" class="form-control" placeholder="Last Name" aria-describedby="basic-addon1" required>
             </div>
           </div>
           <!-- email -->
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon" id="basic-addon1">@</span>
-              <input type="text" id="email" class="form-control" placeholder="E-mail " aria-describedby="basic-addon1">
+              <input type="text" name="email" class="form-control" placeholder="E-mail " aria-describedby="basic-addon1" required>
             </div>
           </div>
           <!-- password -->
@@ -85,13 +93,23 @@ background-color: #222222;
             <div class="input-group">
               <span class="input-group-addon" id="basic-addon1">
                 <span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
-              <input type="password" id="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
+              <input type="password" name="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1" required>
+            </div>
+          </div>
+          <!-- repeat password -->
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">
+                <span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+              <input type="password" name="repeatPassword" class="form-control" placeholder="Repeat password" aria-describedby="basic-addon1" required>
             </div>
           </div>
            <!-- submit -->
           <div class="form-group">
-            <button type="button" class="btn form-control buttons" id="submitBtn"><span class="loginBtnTxt">SUBMIT</span></button>
+            <button type="submit" class="btn form-control buttons" id="submitRegisterBtn"><span class="loginBtnTxt">SUBMIT</span></button>
           </div>
+        </form>
+
       </div>
       <!-- register bottom -->
       <div class="btn-group btn-group-justified" role="group" aria-label="...">
@@ -105,6 +123,10 @@ background-color: #222222;
           <div class="alert alert-success" id="alert">
            <strong>User registered successfully!</strong> <br>Please <a href="index.html" id="loginSubmitted"><b>login </b></a>now.
           </div>
+<!-- validation error modal -->
+<div class="modal fade" id="formErrorModal" role="dialog" aria-hidden="true">
+  Your passwords don't match. Please try again.
+</div>
 </div>
 </div>
 
@@ -112,8 +134,7 @@ background-color: #222222;
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<!-- scripts -->
-<script src="js/script.js"></script>
 
+<script src="js/login.js"></script>
 </body>
 </html>
