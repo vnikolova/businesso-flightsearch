@@ -14,26 +14,17 @@ $( document ).ready(function() {
 
   // register submit
   $(document).on('submit','#registerForm', function(){
-<<<<<<< HEAD
-=======
     console.log('registering...');
->>>>>>> origin/master
     $.ajax({
       type: "POST",
       url: "php/register.php",
       data: $('#registerForm').serialize(),
       success: function(data){
-<<<<<<< HEAD
-        if(data == "true"){
-          //user is registered and logged in
-          // go to account settings
-=======
         console.log(data);
         if(data == "true"){
           //user is registered and logged in
           // go to account settings
           window.location.assign("account-settings.php");
->>>>>>> origin/master
           console.log('success');
        }
        else{
