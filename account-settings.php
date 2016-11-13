@@ -9,7 +9,7 @@
 </head>
 <body>
 <?php
-
+session_start();
 if(isset($_SESSION['username'])) {
 
 ?>
@@ -225,6 +225,7 @@ if(isset($_SESSION['username'])) {
 <?php
 } else {
     header("location:login.html");
+    session_destroy();
 }
 ?>
 

@@ -22,7 +22,7 @@ $( document ).ready(function() {
         if(data == "true"){
           //user is registered and logged in
           // go to account settings
-          window.location.assign("account-settings.php");
+          console.log('success');
        }
        else{
         console.log('error');
@@ -41,10 +41,9 @@ $(document).on('click','#loginSubmit', function(){
   {
     if(data.response === "true"){
       console.log(data.username);
-      $("#chooseFlight").hide();
       localStorage.setItem("user",data.username);
       $('#loginForm')[0].reset(); //clear the form
-      window.location.assign("results.php");
+      window.location.assign("search.php");
    }
    else{
      console.log('error');

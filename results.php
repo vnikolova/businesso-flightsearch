@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css">
 </head>
 <?php
-
+session_start();
 if(isset($_SESSION['username'])) {
 
 ?>

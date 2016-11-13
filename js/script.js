@@ -1,70 +1,5 @@
   $( document ).ready(function() {
 
-  // register bottom
-  $(document).on("click", "#registerBtn", function(){
-     register()
-  });
-  function register(){
-    $("#login").hide();
-    $("#register").show();
-  }
-
-  // login bottom
-  $(document).on("click", "#loginBtn", function(){
-     login()
-  });
-  function login(){
-    $("#login").show();
-    $("#register").hide();
-  }
-
-
-  // submit
-  $(document).on("click", "#submitBtn", function(){
-    //email and password value
-    var username = $("#username").val();
-    var email = $("#email").val();
-    var password = $("#password").val();
-
-    console.log(username, password, email);
-
-
-      localStorage.setItem('name', username);
-      localStorage.setItem('email', email);
-      localStorage.setItem('password', password);
-
-      submitBtn();
-
-  });
-
-  function submitBtn(){
-    $("#register").hide();
-    $("#login").hide();
-    $("#alert").show();
-  }
-
-  // sign up
-  $(document).on("click", "#signUpBtn", function(){
-
-   // stored data from the register-form
-      var storedName = localStorage.getItem('name');
-      var storedPw = localStorage.getItem('email');
-      var storedPw = localStorage.getItem('password');
-
-      // entered data from the login-form
-      var userName =  $("#usernameLog").val();
-      var userPw = $("#passwordLog").val();
-
-      // check if stored data from register-form is equal to data from login form
-      if(userName == storedName && userPw == storedPw) {
-          window.location.assign("search.php");
-          $("#chooseFlight").hide();
-
-      }else {
-          alert('incorrect username or password');
-      }
-    });
-
     // oneWayBtn
     $(document).on("click", "#onewayBtn", function(){
       $("#return").hide();
@@ -382,8 +317,6 @@ function loginSubmitted(){
   $("#login").show();
 }
 
-});
-
 // search btn
 $(document).on("click", "#searchBtn", function(){
   $("#search").hide();
@@ -416,5 +349,3 @@ $(".flight-section").mouseout(function(){
 $(".btn-select").click(function() {
   $("#content").load("overview.php");
 })
-
- });

@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <?php
-
+session_start();
 if(isset($_SESSION['username'])) {
 
 ?>
