@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.min.css">
 </head>
+
 <body>
   <!-- Navigation -->
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -26,7 +27,7 @@
             <span class="caret"></span></button>
             <ul class="dropdown-menu">
               <li><a href="#"data-toggle="modal" data-target="#myModal">My Profile</a></li>
-              <li><a href="index.html" id="logOutBtn" >Log Out</a></li>
+              <li><a href="login.html" id="logOutBtn" >Log Out</a></li>
             </ul>
           </div>
         </li>
@@ -300,7 +301,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="js/script.min.js"></script>
 
- <script src="js/script.min.js"></script>
 </body>
+
 </html>

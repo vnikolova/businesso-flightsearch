@@ -8,6 +8,11 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+<?php
+session_start();
+if(isset($_SESSION['username'])) {
+
+?>
   	<!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container wraper">
@@ -27,7 +32,7 @@
               <span class="caret"></span></button>
               <ul class="dropdown-menu">
                 <li><a href="#"data-toggle="modal" data-target="#myModal">My Profile</a></li>
-                <li><a href="index.html" id="logOutBtn" >Log Out</a></li>
+                <li><a href="login.html" id="logOutBtn" >Log Out</a></li>
               </ul>
             </div>
           </li>
@@ -46,7 +51,7 @@
 			  <li class="paymentCrumb">payment info</li>
 			</ul>
 		</div>
-		
+
 		<!-- personal information -->
 		<div class="col-lg-4 col-lg-offset-4">
 			<!-- personal information -->
@@ -108,11 +113,11 @@
 
 			<!-- accomodation  -->
 			<div class="accomodation" style="display:none;">
-				<h3><span class="glyphicon glyphicon-home" aria-hidden="true"></span> ACCOMODATION</h3> 
+				<h3><span class="glyphicon glyphicon-home" aria-hidden="true"></span> ACCOMODATION</h3>
 				<!-- price slider -->
 				<div class="form-group accomodationTypes"><br>
 					<div class="price">500 &euro;</div>
-					<input type="range"/ id="range" min="100" max="1000">	
+					<input type="range"/ id="range" min="100" max="1000">
 
 
 				</div><br>
@@ -144,7 +149,7 @@
 
 			<!-- services  -->
 			<div class="services" style="display:none;">
-				<h3><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> SERVICES</h3> 
+				<h3><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> SERVICES</h3>
 				<!-- price slider -->
 				<div class="form-group"><br>
 					<button type="button" class="plusBaggageBtn"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
@@ -207,7 +212,7 @@
 				</div>
 			</div> <!-- services -> END  -->
 		</div>
-    </div>	
+    </div>
 
 
 <!-- jquery -->
@@ -216,6 +221,13 @@
 <!-- scripts -->
 <script src="js/script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.4.1/bootstrap-slider.js"></script>
+
+<?php
+} else {
+    header("location:login.html");
+    session_destroy();
+}
+?>
 
 </body>
 </html>

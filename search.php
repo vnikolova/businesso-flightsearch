@@ -1,3 +1,4 @@
+
 <html>
 <head>
       <title>Businesso - Your business travels organized.</title>
@@ -6,7 +7,16 @@
 	<!--my style -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css">
+<link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">    
+<style>
+body{
+        background: url('img/background.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
 </head>
+
 <body>
 	<!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -27,7 +37,7 @@
               <span class="caret"></span></button>
               <ul class="dropdown-menu">
                 <li><a href="#"data-toggle="modal" data-target="#myModal">My Profile</a></li>
-                <li><a href="index.html" id="logOutBtn" >Log Out</a></li>
+                <li><a href="login.html" id="logOutBtn" >Log Out</a></li>
               </ul>
             </div>
           </li>
@@ -39,17 +49,17 @@
         	<div class="row">
         		<div class="col-lg-12 title">
 		            <br><br>
-		            <h3>WHERE TO GO?</h3>
+		            <h1 style="color:white;font-family: 'Paytone One', sans-serif; letter-spacing:4px;">WHERE TO GO ?</h1>
 		        </div>
         	</div>
-        	<div class="row">	
+        	<div class="row">
 			    <div class="col-lg-4 col-md-offset-4">
 			      	<br>
 			      	<!-- return -->
 			      	<div id="return">
 			      		<div class="btn-group" role="group" aria-label="...">
 						  <button type="button" class="btn btn-default active" id="returbBtn">return</button>
-						  <button type="button" class="btn btn-default" id="onewayBtn">one way</button>	
+						  <button type="button" class="btn btn-default" id="onewayBtn">one way</button>
 						</div>
                   <div class="form-group"><br>
                       <!-- departure -->
@@ -101,7 +111,7 @@
 			      	<div id="return">
 			      		<div class="btn-group" role="group" aria-label="...">
 						  <button type="button" class="btn btn-default" id="returnBtn">return</button>
-						  <button type="button" class="btn btn-default active" id="onewayBtn">one way</button>	
+						  <button type="button" class="btn btn-default active" id="onewayBtn">one way</button>
 						</div>
 
                   <div class="form-group"><br>
@@ -154,7 +164,9 @@
 <script src="js/script.js"></script>
  <!-- datepicker CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
-  <!-- typeahead CDN -->   
+  <!-- typeahead CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.js"></script>
 </body>
+
 </html>
+
