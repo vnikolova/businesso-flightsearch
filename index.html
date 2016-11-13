@@ -1,69 +1,125 @@
-<!DOCTYPE html>
 <html>
 <head>
     <title>Businesso - Your business travels organized.</title>
-    <link href="css/prettify.css" rel="stylesheet" />
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="css/demo.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- <link rel="stylesheet" type="text/css" href="css/loginStyles.css">
+--><link rel="stylesheet" type="text/css" href="css/style.min.css">
+<style>
+body{
+background-image: url("./img/airplane.jpg");
+}
+.wrapper {
+  background-color: rgba(0,0,0,0.5);
+  height: 100%;
+
+}
+
+#register{
+  display: none;
+}
+.alert{
+  display: none;
+  text-align: center;
+  font-size: 15px;
+}
+</style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container wraper">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">
-                  <p style="letter-spacing:2px;text-transform: uppercase;"><img src="img/paper-airplane-icon.png" alt="businesso_logo">Businesso</p>
+<div class="wrapper" id="wrapper">
 
-                </a>
+  <div class="container">
+    <div class="col-lg-4 col-lg-offset-4 row">
+      <!-- logo  -->
+      <div class="form-group">
+        <p class="logoTxt">
+          <img src="img/paper-airplane-icon.png" alt="businesso_logo"> Businesso
+        </p>
+      </div><br>
+      <!-- login -->
+      <div id="login">
+        <div class="box">
+          <br>
+          <!-- username -->
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+              <input type="text" id="usernameLog" required class="form-control" placeholder="Username" aria-describedby="basic-addon1">
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                  <li><a href="#"><span class="glyphicon glyphicon-user"></span> John Mauyer</a></li>
-                  <li><a href="#"><span class="glyphicon glyphicon-chevron-down"></span></a></li>
-                </ul>
+          </div>
+          <!-- password -->
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">
+                <span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+              <input type="password" id="passwordLog" required class="form-control" placeholder="Password" aria-describedby="basic-addon1">
             </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-    <div class="container" id="content">
-    </div>
-      <div class="panel-footer">
-        <p style="text-align:center; padding:15px;">Copyright &copy; Businesso 2016 Copenhagen</p>
-        <div id="footer" style="margin-top:-20px;">
-            <a href="#"> Contact </a>|
-            <a href="#"> FAQ </a>|
-            <a href="#"> About </a>
+          </div>
+           <!-- login -->
+          <div class="form-group">
+            <button type="button" class="btn form-control buttons" id="signUpBtn"><span class="loginBtnTxt">SIGN IN</span></button>
+          </div>
+      </div>
+      <!-- register bottom -->
+      <div class="btn-group btn-group-justified" role="group" aria-label="...">
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default" id="registerBtn"><span class="register">register</span></button>
         </div>
     </div>
+  </div><!-- end of login -->
+
+  <!-- register -->
+      <div id="register">
+        <div class="box">
+          <br>
+          <!-- username -->
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+              <input type="text" id="username" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <!-- email -->
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">@</span>
+              <input type="text" id="email" class="form-control" placeholder="E-mail " aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <!-- password -->
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">
+                <span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+              <input type="password" id="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
+            </div>
+          </div>
+           <!-- submit -->
+          <div class="form-group">
+            <button type="button" class="btn form-control buttons" id="submitBtn"><span class="loginBtnTxt">SUBMIT</span></button>
+          </div>
+      </div>
+      <!-- register bottom -->
+      <div class="btn-group btn-group-justified" role="group" aria-label="...">
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default" id="loginBtn"><span class="register">login</span></button>
+        </div>
     </div>
 
+  </div><!-- end of login -->
+   <!-- modal with message -->
+          <div class="alert alert-success" id="alert">
+           <strong>User registered successfully!</strong> <br>Please <a href="index.html" id="loginSubmitted"><b>login </b></a>now.
+          </div>
+</div>
+</div>
+</div>
 <!-- jquery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<!-- typeahead plugin -->
-<script src="js/bootstrap-typeahead.js" type="text/javascript"></script>
-<!-- cities list -->
-<script src="js/demo.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<!-- date picker -->
-<script src="js/bootstrap-datepicker.js"></script>
-
-<script>
-$(document).ready(function(){
-  $("#content").load("search.html");
-})
-
-</script>
+<script src="js/script.min.js"></script>
 </body>
 </html>

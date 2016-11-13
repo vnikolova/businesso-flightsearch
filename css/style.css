@@ -1,83 +1,172 @@
-* {
-  margin: 0;
-  border-radius: 0 !important;
-}
+/*Index*/
 
-.glyphicon {
-	text-decoration: none;
+body{
+background-image: url("./img/airplane.jpg");
 }
-
-.navbar p {
-	color:white;
-}
-
-html, body {
+.wrapper {
+  background-color: rgba(0,0,0,0.5);
   height: 100%;
-}
-.container {
-  min-height: 100%;
-  /* equal to footer height */
-  margin-bottom: -90px;
-  	text-decoration: none;
-}
-.container:after {
-  content: "";
-  display: block;
+
 }
 
-#history {
-	position:fixed;
-}
-.panel-footer, .container:after {
-  height: 90px;
-}
-
-#footer {
-	text-align: center;
-}
-
-.separator {
-	height: 60px;
-}
-
-.flight_separator {
-	height: 50px;
-}
-
-#overwiev p {
-	font-size: 18px;
-    line-height: 30px;
-}
-
-#blue{
-	background-color: mediumturquoise;
-  padding: 10px;
-}
-
-#grey{
-	background-color: whitesmoke;
-	padding-top: 10px;
-	padding-bottom: 10px;
-}
-
-#overwiev img {
-	margin: 5px;
-}
-
-.text-left{
-	text-align: left;
-}
-
-.text-right{
-	text-align: right;
-}
-.flight-section {
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-.btn-select {
+#register{
   display: none;
-  width: 100%;
+}
+.alert{
+  display: none;
+  text-align: center;
+  font-size: 15px;
+}
+/*END Index*/
+.logoTxt{
+  letter-spacing:4px;
+  text-transform: uppercase;
+  color:white;
+  font-size: 18px;
+  text-align: center;
+  margin-left:-30px;
+  margin-top: 120px;
+}
+.logoTxtProfile{
+  letter-spacing:4px;
+  text-transform: uppercase;
+  color:white;
+  font-size: 18px;
+  text-align: center;
+  margin-left:-30px;
+
+}
+.buttons{
+  background-color: #3aaaab;
+}
+.loginBtnTxt{
+  color:white;
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+.buttons:hover{
+  background-color: #236f70;
+  color:white;
+}
+.box{
+  background-color: white;
+  padding: 20px;
+  margin-top:0px;
+}
+.login{
+  background-color: #3aaaab;
+}
+.register{
+  float:right;
+  margin-right:20px; 
+}
+nav{
+  height: 70px;
+}
+.dropdown-toggle{
+  margin-top:20px;
+  background-color: transparent;
+  color: white;
+}
+.welcomeUser{
+  margin-top: 15px;
+}
+.modal-title{
+  text-align: center;
+}
+.modal-header{
+  background-color: black;
+  color:#ddd;
+  letter-spacing: 2px;
+}
+body.modal-open .container{
+    -webkit-filter: blur(4px);
+    -moz-filter: blur(4px);
+    -o-filter: blur(4px);
+    -ms-filter: blur(4px);
+    filter: blur(4px);
+    filter: url("https://gist.githubusercontent.com/amitabhaghosh197/b7865b409e835b5a43b5/raw/1a255b551091924971e7dee8935fd38a7fdf7311/blur".svg#blur);
+filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
+}
+.modal{
+  margin-top: 100px;
+}
+h4{
+  text-align: center;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  }
+  table{
+    margin-top: 30px;
+    text-align: center;
+  }
+  th{
+    text-align: center;
+  }
+  h3{
+    text-align: center;
+  }
+  .btnNext{
+   margin-left:0px;
+   width:400px;
+   letter-spacing: 2px;
+  }
+
+input[type="text"]{
+height:50px;
+/*border: 2px solid black;*/
+}input[type="password"]{
+height:50px;
+/*border: 2px solid black;*/
+}
+
+.searchBtn{
+	border: 2px solid #4ed0d1;
+	background-color: #4ed0d1;
+	color: black;
+	font-weight: 800;
+	letter-spacing: 3px;
+}
+.searchBtn:hover{
+	background-color: #43b3b4;
+	border: 2px solid #43b3b4;
+}
+/* enable absolute positioning */
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  60px; }
+.right-addon input { padding-right: 60px; }
+
+.title{
+	margin-top: 100px;
+}
+.footer, .push {
+height: 5em;
+text-align: center;
+
+}
+#footer {
+  text-align: center;
+}
+.panel-footer{
+	margin-top:-10px;
+}
+.results{
+	display: none;
 }
 
 /* breadcrumbs */
@@ -164,4 +253,37 @@ html, body {
 }
 .breadcrumb-arrow li span {
     color: #434a54
+}
+.flight-section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.flight_separator {
+	height: 50px;
+}
+
+#overwiev p {
+	font-size: 18px;
+    line-height: 30px;
+}
+
+#blue{
+	background-color: mediumturquoise;
+  padding: 10px;
+}
+
+#grey{
+	background-color: whitesmoke;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#overwiev img {
+	margin: 5px;
+}
+.btn-select{
+	width:156px;
+}
+.chooseFlight{
+  display: none;
 }

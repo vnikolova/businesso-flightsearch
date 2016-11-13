@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Flexbox Seat Picker</title>
+    <link rel="stylesheet" href="./css/seat_picker_style.css" media="screen" title="no title">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="row" id="firstRow">
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col yellow">
+                                    F
+                                </div>
+                                <div class="col yellow">
+                                    __
+                                </div>
+                                <div class="col purple">
+                                    __
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col yellow">
+                                    D
+                                </div>
+                                <div class="col yellow">
+                                    __
+                                </div>
+                                <div class="col purple">
+                                    __
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-4">
+                            <div class="row append-green append-blue">
+
+                            </div>
+                            <div class="row append-green append-blue">
+
+                            </div>
+                            <div class="row append-green append-blue">
+
+                            </div>
+                        </div>
+                        <div class="col col-6">
+                            <div class="row append-green-12">
+
+                            </div>
+                            <div class="row append-green-12">
+
+                            </div>
+                            <div class="row append-green-12">
+
+                            </div>
+                        </div>
+                        <div class="col bottom">
+                            <div class="row append-blue">
+
+                            </div>
+                            <div class="row append-blue">
+
+                            </div>
+                        </div>
+                        <div class="col wc-img">
+                            <img src="img/wc-img.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" id="secondRow">
+                <div class="col">
+                    <div class="row">
+                        <div class="col wc-img">
+                            <img src="img/wc-img.png" alt="" />
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col yellow">
+                                    C
+                                </div>
+                                <div class="col yellow">
+                                    __
+                                </div>
+                                <div class="col purple">
+                                    __
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col yellow">
+                                    A
+                                </div>
+                                <div class="col yellow">
+                                    __
+                                </div>
+                                <div class="col purple">
+                                    __
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-4">
+                            <div class="row append-green append-blue">
+
+                            </div>
+                            <div class="row append-green append-blue">
+
+                            </div>
+                            <div class="row append-green append-blue">
+
+                            </div>
+                        </div>
+                        <div class="col col-6">
+                            <div class="row append-green-12">
+
+                            </div>
+                            <div class="row append-green-12">
+
+                            </div>
+                            <div class="row append-green-12">
+
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row append-blue">
+
+                            </div>
+                            <div class="row append-blue">
+
+                            </div>
+                            <div class="row append-blue">
+
+                            </div>
+                        </div>
+                        <div class="col wc-img">
+                            <img src="img/wc-img.png" alt="" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- end of container -->
+    </div>
+    <!-- end of wrapper -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+
+            for (i = 0; i < 6; i++) {
+                $(".append-green").append(
+                    '<div class="col green">__</div>'
+                );
+            }
+
+            $(".append-green").append(
+                '<div class="col red">__</div>'
+            );
+            for (i = 0; i < 12; i++) {
+                $(".append-green-12").append('<div class="col green">__</div>');
+            }
+            $(".append-blue").append(
+                '<div class="col blue">__</div>'
+            );
+        });
+    </script>
+</body>
+
+</html>
