@@ -28,6 +28,7 @@
         $("#receivedDeparture").append('<p>departure'+jData.departureDesOne+'</p>')
           });
 
+<<<<<<< HEAD
         // $.ajax({
         //  type: "GET",
         //  url: "search.php",
@@ -35,6 +36,9 @@
         //  success: function(msg){
         //              alert( "Data Saved: " + msg );
         //           }
+=======
+      $("#content").load("results.php");
+>>>>>>> origin/master
     });
 
       // $("#content").load("results.php");
@@ -54,7 +58,10 @@
 
           });
       $("#content").load("results.php");
+<<<<<<< HEAD
       window.location.assign("results.php");
+=======
+>>>>>>> origin/master
     });
 
     function getDataUrl(){
@@ -79,6 +86,7 @@
   // document.getElementById("displayedEmail").innerHTML = localStorage.getItem("email");
   // document.getElementById("displayedPass").innerHTML = localStorage.getItem("password");
 
+<<<<<<< HEAD
    $("#results").hide();
   $(document).on("click", "#loginSubmitted", function(){
    loginSubmitted();
@@ -90,14 +98,34 @@
 
   
 
+=======
+>>>>>>> origin/master
   $(document).on("click", ".btn-select", function(){
      window.location.assign("overview.php");
   });
   $(document).on("click", "#backToSearchResultsBtn", function(){
      window.location.assign("login.html");
   });
+<<<<<<< HEAD
   $(document).on("click", "#logOut", function(){
 
+=======
+  $(document).on("click", "#logOutBtn", function(e){
+    e.preventDefault();
+    $.ajax({
+        type:"POST",
+        url:"php/logout.php",
+        data:'',
+        dataType:'html',
+        context:document.body,
+        global:false,
+        async:false,
+        success:function(data){
+            console.log(data);
+            window.location.assign("login.html");
+        }
+    });
+>>>>>>> origin/master
   });
   $(document).on("click", "#backToSearchBtn", function(){
   	$("#search").show();
@@ -296,6 +324,26 @@
   // sumbit payment
   $(document).on("click", "#submitPaymentBtn", function(){
      window.location.assign("confirmation.php");
+<<<<<<< HEAD
+  });
+
+$("#popover").popover({ trigger: "hover" });
+
+$(function() {
+
+    // switch for one way
+  $("#returnOn").on("click",function(e) {
+    e.preventDefault();
+    $("#return").hide();
+    $("#oneWay").show();
+  });
+  // switch for return
+  $("#returnOff").on("click",function(e) {
+    e.preventDefault();
+    $("#return").show();
+    $("#oneWay").hide();
+=======
+>>>>>>> origin/master
   });
 
 $("#popover").popover({ trigger: "hover" });
@@ -317,6 +365,47 @@ $(function() {
 
 
 });
+//display values from localhost
+document.getElementById("displayedUser").innerHTML = localStorage.getItem("name");
+document.getElementById("displayedName").innerHTML = localStorage.getItem("name");
+document.getElementById("displayedEmail").innerHTML = localStorage.getItem("email");
+document.getElementById("displayedPass").innerHTML = localStorage.getItem("password");
+
+$("#results").hide();
+
+// search btn
+$(document).on("click", "#searchBtn", function(){
+  $("#search").hide();
+  $("#results").show();
+  $("#chooseFlight").show();
+});
+$(document).on("click", ".btn-select", function(){
+   window.location.assign("overview.php");
+});
+$(document).on("click", "#backToSearchResultsBtn", function(){
+   window.location.assign("login.html");
+});
+
+$(document).on("click", "#backToSearchBtn", function(){
+	$("#search").show();
+	$("#results").hide();
+});
+
+
+
+$(".flight-section").mouseover(function(){
+  $(this).find(".btn-select").css("display", "block");
+})
+$(".flight-section").mouseout(function(){
+  $(this).find(".btn-select").css("display", "none");
+})
+
+$(".btn-select").click(function() {
+  $("#content").load("overview.php");
+})
+
+});
+<<<<<<< HEAD
 
 
  $("#results").hide();
@@ -360,3 +449,5 @@ $(".flight-section").mouseout(function(){
 $(".btn-select").click(function() {
   $("#content").load("overview.php");
 })
+=======
+>>>>>>> origin/master

@@ -1,4 +1,8 @@
+<?php
+session_start();
+if(isset($_SESSION['username'])) {
 
+?>
 <html>
 <head>
       <title>Businesso - Your business travels organized.</title>
@@ -7,7 +11,7 @@
 	<!--my style -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css">
-<link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">    
+<link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
 <style>
 body{
         background: url('img/background.jpg');
@@ -37,7 +41,7 @@ body{
               <span class="caret"></span></button>
               <ul class="dropdown-menu">
                 <li><a href="#"data-toggle="modal" data-target="#myModal">My Profile</a></li>
-                <li><a href="login.html" id="logOutBtn" >Log Out</a></li>
+                <li><a href="login.html" id="logOutBtn">Log Out</a></li>
               </ul>
             </div>
           </li>
@@ -169,4 +173,8 @@ body{
 </body>
 
 </html>
-
+<?php
+  } else {
+      header("location:login.html");
+  }
+?>

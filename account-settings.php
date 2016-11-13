@@ -225,7 +225,10 @@ if(isset($_SESSION['username'])) {
 <?php
 } else {
     header("location:login.html");
+<<<<<<< HEAD:account-settings.php
     session_destroy();
+=======
+>>>>>>> origin/master:account-settings.php
 }
 ?>
 

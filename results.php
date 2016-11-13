@@ -1,4 +1,8 @@
+<?php
+session_start();
+if(isset($_SESSION['username'])) {
 
+?>
 <!DOCTYPE html>
 <html>
 
@@ -17,9 +21,8 @@
     </style>
 
 </head>
-    
 
-    <body>
+<body>
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container wraper">
@@ -161,7 +164,7 @@
                                         $receivedDeparture = $_GET['departureDes'];
                                             echo $receivedDeparture;
                                         ?>
-                                        
+
                                         </h3>
                                 </div>
                                 <div class="col-lg-3">
@@ -194,7 +197,6 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class="row flight-section">
                     <div class="col-xs-10 col-xs-offset-1" style="border: 2px solid black;">
                         <div class="row">
@@ -260,7 +262,7 @@
                                         $receivedDeparture = $_GET['departureDes'];
                                             echo $receivedDeparture;
                                         ?>
-                                        
+
                                         </h3>
                                 </div>
                                 <div class="col-lg-3">
@@ -293,7 +295,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row flight-section">
                     <div class="col-xs-10 col-xs-offset-1" style="border: 2px solid black;">
                         <div class="row">
@@ -359,7 +360,7 @@
                                         $receivedDeparture = $_GET['departureDes'];
                                             echo $receivedDeparture;
                                         ?>
-                                        
+
                                         </h3>
                                 </div>
                                 <div class="col-lg-3">
@@ -392,7 +393,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
 
             <!-- footer -->
@@ -421,7 +421,10 @@
         </script>
 
     </body>
-    
 
 </html>
-
+<?php
+  } else {
+      header("location:login.html");
+  }
+?>
