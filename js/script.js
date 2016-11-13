@@ -64,25 +64,27 @@
   // document.getElementById("displayedEmail").innerHTML = localStorage.getItem("email");
   // document.getElementById("displayedPass").innerHTML = localStorage.getItem("password");
 
-   $("#results").hide();
-  $(document).on("click", "#loginSubmitted", function(){
-   loginSubmitted();
-  });
-  function loginSubmitted(){
-    $("#alert").hide();
-    $("#login").show();
-  }
-
-  });
-
   $(document).on("click", ".btn-select", function(){
      window.location.assign("overview.php");
   });
   $(document).on("click", "#backToSearchResultsBtn", function(){
      window.location.assign("login.html");
   });
-  $(document).on("click", "#logOut", function(){
-
+  $(document).on("click", "#logOutBtn", function(e){
+    e.preventDefault();
+    $.ajax({
+        type:"POST",
+        url:"php/logout.php",
+        data:'',
+        dataType:'html',
+        context:document.body,
+        global:false,
+        async:false,
+        success:function(data){
+            console.log(data);
+            window.location.assign("login.html");
+        }
+    });
   });
   $(document).on("click", "#backToSearchBtn", function(){
   	$("#search").show();
@@ -309,13 +311,7 @@ document.getElementById("displayedEmail").innerHTML = localStorage.getItem("emai
 document.getElementById("displayedPass").innerHTML = localStorage.getItem("password");
 
  $("#results").hide();
-$(document).on("click", "#loginSubmitted", function(){
- loginSubmitted();
-});
-function loginSubmitted(){
-  $("#alert").hide();
-  $("#login").show();
-}
+
 
 // search btn
 $(document).on("click", "#searchBtn", function(){
@@ -329,9 +325,7 @@ $(document).on("click", ".btn-select", function(){
 $(document).on("click", "#backToSearchResultsBtn", function(){
    window.location.assign("login.html");
 });
-$(document).on("click", "#logOut", function(){
-	 window.location.assign("login.html");
-});
+
 $(document).on("click", "#backToSearchBtn", function(){
 	$("#search").show();
 	$("#results").hide();
@@ -349,3 +343,5 @@ $(".flight-section").mouseout(function(){
 $(".btn-select").click(function() {
   $("#content").load("overview.php");
 })
+
+});

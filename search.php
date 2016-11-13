@@ -1,3 +1,8 @@
+<?php
+session_start();
+if(isset($_SESSION['username'])) {
+
+?>
 <html>
 <head>
       <title>Businesso - Your business travels organized.</title>
@@ -7,11 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css">
 </head>
-<?php
-session_start();
-if(isset($_SESSION['username'])) {
 
-?>
 <body>
 	<!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -32,7 +33,7 @@ if(isset($_SESSION['username'])) {
               <span class="caret"></span></button>
               <ul class="dropdown-menu">
                 <li><a href="#"data-toggle="modal" data-target="#myModal">My Profile</a></li>
-                <li><a href="login.html" id="logOutBtn" >Log Out</a></li>
+                <li><a href="login.html" id="logOutBtn">Log Out</a></li>
               </ul>
             </div>
           </li>
@@ -162,9 +163,10 @@ if(isset($_SESSION['username'])) {
   <!-- typeahead CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.js"></script>
 </body>
+
+</html>
 <?php
   } else {
       header("location:login.html");
   }
 ?>
-</html>
