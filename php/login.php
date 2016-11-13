@@ -17,9 +17,9 @@ session_start();
 
   //if it finds a user with this email and password it will return 1
   if (mysqli_num_rows($result)  == 1) {
-  	$_SESSION['username'] = $row['firstName'];
+  	$_SESSION['username'] = $row['firstname'];
   	$_SESSION['id'] = $row['id'];
-    $jData = array("response" => "true", "username" => $row['firstName']);
+    $jData = array("response" => "true", "username" => $row['firstname']);
     $output = json_encode($jData);
     echo $output;
   	}

@@ -20,7 +20,7 @@
   //if it finds a user with this email and password it will return 1
   if ($result) {
     //login user by setting session id and username
-    $_SESSION['username'] = $row['firstName'];
+    $_SESSION['username'] = $row['firstname'];
     $_SESSION['id'] = $row['id'];
     echo "true";
   	}

@@ -22,7 +22,7 @@ $( document ).ready(function() {
         if(data == "true"){
           //user is registered and logged in
           // go to account settings
-          window.location.assign("../account-settings.php");
+          window.location.assign("account-settings.php");
        }
        else{
         console.log('error');
