@@ -20,10 +20,9 @@ $( document ).ready(function() {
       data: $('#registerForm').serialize(),
       success: function(data){
         if(data == "true"){
-          //close modal and show login
-          $("#register").hide();
-          $("#login").hide();
-          $("#alert").show();
+          //user is registered and logged in
+          // go to account settings
+          window.location.assign("../account-settings.php");
        }
        else{
         console.log('error');
@@ -41,10 +40,11 @@ $(document).on('click','#loginSubmit', function(){
   $.getJSON(thelink,function(data)
   {
     if(data.response === "true"){
-      window.location.assign("results.html");
+      console.log(data.username);
       $("#chooseFlight").hide();
       localStorage.setItem("user",data.username);
       $('#loginForm')[0].reset(); //clear the form
+      window.location.assign("results.php");
    }
    else{
      console.log('error');

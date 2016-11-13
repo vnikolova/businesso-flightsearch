@@ -57,7 +57,7 @@
 
       // check if stored data from register-form is equal to data from login form
       if(userName == storedName && userPw == storedPw) {
-          window.location.assign("search.html");
+          window.location.assign("search.php");
           $("#chooseFlight").hide();
 
       }else {
@@ -93,7 +93,7 @@
         // console.log(jData);
           });
 
-      $("#content").load("results.html");
+      $("#content").load("results.php");
     });
     // search btn one way
     $(document).on("click", "#searchBtnOneway", function(){
@@ -108,7 +108,7 @@
       $.getJSON(linktoApi, function(jData){
         // console.log(jData);
           });
-      $("#content").load("results.html");
+      $("#content").load("results.php");
     });
 
     // datepicker
@@ -141,10 +141,10 @@
   });
 
   $(document).on("click", ".btn-select", function(){
-     window.location.assign("overview.html");
+     window.location.assign("overview.php");
   });
   $(document).on("click", "#backToSearchResultsBtn", function(){
-     window.location.assign("index.html");
+     window.location.assign("login.html");
   });
   $(document).on("click", "#logOut", function(){
 
@@ -164,7 +164,7 @@
   })
 
   $(".btn-select").click(function() {
-    $("#content").load("overview.html");
+    $("#content").load("overview.php");
   })
 
   function displayResult(item, val, text) {
@@ -271,7 +271,7 @@
 
   // results go back
   $("#backToSearchBtn").click(function(){
-       window.location.assign("search.html");
+       window.location.assign("search.php");
   });
 
   ////////////////////////// ACCOUNT SETTINGS ///////////////////////////
@@ -345,7 +345,7 @@
 
   // sumbit payment
   $(document).on("click", "#submitPaymentBtn", function(){
-     window.location.assign("confirmation.html");
+     window.location.assign("confirmation.php");
   });
 
 $("#popover").popover({ trigger: "hover" });
@@ -391,13 +391,13 @@ $(document).on("click", "#searchBtn", function(){
   $("#chooseFlight").show();
 });
 $(document).on("click", ".btn-select", function(){
-   window.location.assign("overview.html");
+   window.location.assign("overview.php");
 });
 $(document).on("click", "#backToSearchResultsBtn", function(){
-   window.location.assign("index.html");
+   window.location.assign("login.html");
 });
 $(document).on("click", "#logOut", function(){
-	 window.location.assign("index.html");
+	 window.location.assign("login.html");
 });
 $(document).on("click", "#backToSearchBtn", function(){
 	$("#search").show();
@@ -414,7 +414,7 @@ $(".flight-section").mouseout(function(){
 })
 
 $(".btn-select").click(function() {
-  $("#content").load("overview.html");
+  $("#content").load("overview.php");
 })
 
  });

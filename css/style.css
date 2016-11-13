@@ -1,3 +1,15 @@
+#loginPageWrapper {
+background-color: #222222;
+}
+#register{
+  display: none;
+}
+.alert{
+  display: none;
+  text-align: center;
+  font-size: 15px;
+}
+
 .logoTxt{
   letter-spacing:4px;
   text-transform: uppercase;
@@ -39,7 +51,7 @@
 }
 .register{
   float:right;
-  margin-right:20px; 
+  margin-right:20px;
 }
 nav{
   height: 70px;
@@ -94,7 +106,7 @@ h4{
   }
 
 input[type="text"]{
-height:50px;  
+height:50px;
 
 /*border: 2px solid black;*/
 }input[type="password"]{
@@ -114,8 +126,8 @@ height:50px;
 	border: 2px solid #43b3b4;
 }
 /* enable absolute positioning */
-.inner-addon { 
-    position: relative; 
+.inner-addon {
+    position: relative;
 }
 
 /* style icon */

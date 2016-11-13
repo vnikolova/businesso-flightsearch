@@ -1,0 +1,123 @@
+<html>
+
+<head>
+    <title>Businesso - Your business travels organized.</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" type="text/css" href="css/loginStyles.css">-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body id="loginPageWrapper">
+    <div class="container">
+        <div class="col-lg-4 col-lg-offset-4 row">
+            <!-- logo  -->
+            <div class="form-group">
+                <p class="logoTxt">
+                    <img src="img/paper-airplane-icon.png" alt="businesso_logo"> Businesso
+                </p>
+            </div><br>
+            <!-- login -->
+            <div id="login">
+                <div class="box">
+                    <form id="loginForm" action="./" method="post" name="loginForm">
+                        <br>
+                        <!-- email -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-addon1">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                                <input type="text" id="emailLogin" class="form-control" placeholder="Email" aria-describedby="basic-addon1" required>
+                            </div>
+                        </div>
+                        <!-- password -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-addon1">
+                <span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+                                <input type="password" id="passwordLogin" required class="form-control" placeholder="Password" aria-describedby="basic-addon1" required>
+                            </div>
+                        </div>
+                        <!-- login -->
+                        <div class="form-group">
+                            <button type="button" class="btn form-control buttons" id="loginSubmit"><span class="loginBtnTxt">SIGN IN</span></button>
+                        </div>
+                    </form>
+                </div>
+                <!-- register bottom -->
+                <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default" id="registerBtn"><span class="register">register</span></button>
+                    </div>
+                </div>
+            </div>
+            <!-- end of login -->
+
+            <!-- register -->
+            <div id="register">
+                <div class="box ">
+                    <form id="registerForm" action="./" method="post" name="registerForm">
+                        <br>
+                        <!-- first and last name -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-addon1">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                                <input type="text" name="firstName" class="form-control" placeholder="First Name" aria-describedby="basic-addon1" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-addon1">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                                <input type="text" name="lastName" class="form-control" placeholder="Last Name" aria-describedby="basic-addon1" required>
+                            </div>
+                          </div>
+
+                        <!-- email -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-addon1">@</span>
+                                <input type="text" name="email" class="form-control" placeholder="E-mail " aria-describedby="basic-addon1" required>
+                            </div>
+                        </div>
+                        <!-- password -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-addon1">
+                <span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+                                <input type="password" name="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1" required>
+                            </div>
+                        </div>
+                        <!-- submit -->
+                        <div class="form-group">
+                            <button type="submit" class="btn form-control buttons" id="submitRegisterBtn"><span class="loginBtnTxt">SUBMIT</span></button>
+                        </div>
+                    </form>
+
+                </div>
+                <!-- register bottom -->
+                <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default" id="loginBtn"><span class="register">login</span></button>
+                    </div>
+                </div>
+
+            </div>
+            <!-- end of register -->
+            <!-- modal with message -->
+            <div class="alert alert-success" id="alert">
+                <strong>User registered successfully!</strong> <br>Please <a href="login.html" id="loginSubmitted"><b>login </b></a>now.
+            </div>
+        </div>
+    </div>
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/login.js"></script>
+</body>
+
+</html>
