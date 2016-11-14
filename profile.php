@@ -14,34 +14,8 @@ if(isset($_SESSION['username'])) {
 
 ?>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container wraper">
-            <!-- Brand and toggle get grouped for bestter mobile display -->
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">
-                    <p class="logoTxtProfile">
-                        <img src="img/paper-airplane-icon.png" alt="businesso_logo"> Businesso
-                    </p>
-                </a>
-            </div>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user welcomeUser"></span> <span id="displayedUser"></span></a></li>
-                <li>
-                    <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-              <span class="caret"></span></button>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" id="profileBtn">My Profile</a></li>
-                            <li><a href="login.html" id="logOutBtn">Log Out</a></li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-            <!-- end of the right nav bar -->
-        </div>
-    </nav>
-    <!-- Navigation END --><br><br><br><br><br>
+  <?php include_once "header.html" ?>
+
     <!-- content -->
     <div class="container">
       <div class="col-xs-8 col-xs-offset-2">

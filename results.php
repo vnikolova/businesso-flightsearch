@@ -23,37 +23,7 @@ if(isset($_SESSION['username'])) {
 </head>
 
 <body>
-        <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container wraper">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">
-                        <p class="logoTxtProfile">
-                            <img src="img/paper-airplane-icon.png" alt="businesso_logo"> Businesso
-                        </p>
-                    </a>
-                </div>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-user welcomeUser"></span> <span id="displayedUser"></span></a></li>
-                    <li>
-                        <div class="dropdown">
-                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-            <span class="caret"></span></button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#" data-toggle="modal" data-target="#myModal">My Profile</a></li>
-                                <li><a href="login.html" id="logOutBtn">Log Out</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-                <!-- end of the right nav bar -->
-            </div>
-        </nav>
-        <!-- Navigation END -->
-        <br><br>
-
-
+  <?php include_once "header.html" ?>
         <!-- search results -->
         <div class="container" id="results">
             <!-- breadcrumb -->
