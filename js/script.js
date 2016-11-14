@@ -12,9 +12,12 @@
       $("#return").show();
     });
 
+
     // searc btn return
     $(document).on("click", "#searchBtnReturn", function(){
       console.log("x");
+      // $("#searchBtnOneWay").css("background-color", "yellow");
+
       // take values
       var departureDes = $("#departureDes").val();
       var arrivalDes = $("#arrivalDes").val();
@@ -23,19 +26,10 @@
       var passangersnumber = $("#passNumber").val();
 
       window.location.href= 'results.php?departureDes='+departureDes+'&arrivalDes='+arrivalDes+'&departureDate='+departureDate+'&arrivalDate='+arrivalDate+'&passangersnumber='+passangersnumber;
-      //console.log(linkToApi);
-      $.getJSON('data.txt', function(jData){
-        $("#receivedDeparture").append('<p>departure'+jData.departureDesOne+'</p>')
+      console.log(linkToApi);
+      $.getJSON(linkToApi, function(jData){
+        // console.log(jData);
           });
-
-        // $.ajax({
-        //  type: "GET",
-        //  url: "search.php",
-        //  data: "departureDesOne=" +departureDes,
-        //  success: function(msg){
-        //              alert( "Data Saved: " + msg );
-        //           }
-    });
 
       // $("#content").load("results.php");
     });
@@ -43,23 +37,20 @@
     // search btn one way
     $(document).on("click", "#searchBtnOneway", function(){
       // take values
-      var departureDesOne = $("#departureDesOne").val();
-      var arrivalDesOne = $("#arrivalDesOne").val();
-      var departOne = $("#departOne").val();
-      var passNumberOne = $("#passNumberOne").val();
+      var departureDes = $("#departureDesOne").val();
+      var arrivalDes = $("#arrivalDesOne").val();
+      var departureDate = $("#departOne").val();
+      // var arrivalDate = $("#arriveDate").val();
+      var passangersnumber = $(".passNumber").val();
+      console.log(departureDes);
 
-      var linktoApi = 'api.php?command=oneway&departureDesOne='+departureDesOne+'&arrivalDesOne='+arrivalDesOne+'&departOne='+departOne+'&passNumberOne='+passNumberOne;
-      console.log(linktoApi);
-      $.getJSON(linktoApi, function(jData){
-
-          });
-      $("#content").load("results.php");
-      window.location.assign("results.php");
+      window.location.href= 'resultsOneway.php?departureDes='+departureDes+'&arrivalDes='+arrivalDes+'&departureDate='+departureDate+'&passangersnumber='+passangersnumber;
+      // console.log(linktoApi);
+      // $.getJSON(linktoApi, function(jData){
+      //   // console.log(jData);
+      //     });
+      // $("#content").load("results.php");
     });
-
-    function getDataUrl(){
-
-    }
 
     // datepicker
   $(function () {
@@ -79,25 +70,27 @@
   // document.getElementById("displayedEmail").innerHTML = localStorage.getItem("email");
   // document.getElementById("displayedPass").innerHTML = localStorage.getItem("password");
 
-   $("#results").hide();
-  $(document).on("click", "#loginSubmitted", function(){
-   loginSubmitted();
-  });
-  function loginSubmitted(){
-    $("#alert").hide();
-    $("#login").show();
-  }
-
-  
-
   $(document).on("click", ".btn-select", function(){
      window.location.assign("overview.php");
   });
   $(document).on("click", "#backToSearchResultsBtn", function(){
      window.location.assign("login.html");
   });
-  $(document).on("click", "#logOut", function(){
-
+  $(document).on("click", "#logOutBtn", function(e){
+    e.preventDefault();
+    $.ajax({
+        type:"POST",
+        url:"php/logout.php",
+        data:'',
+        dataType:'html',
+        context:document.body,
+        global:false,
+        async:false,
+        success:function(data){
+            console.log(data);
+            window.location.assign("login.html");
+        }
+    });
   });
   $(document).on("click", "#backToSearchBtn", function(){
   	$("#search").show();
@@ -318,31 +311,21 @@ $(function() {
 
 });
 
-
- $("#results").hide();
-$(document).on("click", "#loginSubmitted", function(){
- loginSubmitted();
-});
-function loginSubmitted(){
-  $("#alert").hide();
-  $("#login").show();
-}
+$("#results").hide();
 
 // search btn
-// $(document).on("click", "#searchBtn", function(){
-//   $("#search").hide();
-//   $("#results").show();
-//   $("#chooseFlight").show();
-// });
+$(document).on("click", "#searchBtn", function(){
+  $("#search").hide();
+  $("#results").show();
+  $("#chooseFlight").show();
+});
 $(document).on("click", ".btn-select", function(){
    window.location.assign("overview.php");
 });
 $(document).on("click", "#backToSearchResultsBtn", function(){
    window.location.assign("login.html");
 });
-$(document).on("click", "#logOut", function(){
-	 window.location.assign("login.html");
-});
+
 $(document).on("click", "#backToSearchBtn", function(){
 	$("#search").show();
 	$("#results").hide();
@@ -360,3 +343,5 @@ $(".flight-section").mouseout(function(){
 $(".btn-select").click(function() {
   $("#content").load("overview.php");
 })
+
+});

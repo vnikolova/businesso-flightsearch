@@ -9,10 +9,14 @@
 {"departureDes":"", "arrivalDes":"", "departDate":"", "arriveDate":"", "passangers":"1"}
 {"departureDes":"", "arrivalDes":"", "departDate":"", "arriveDate":"", "passangers":"1"}
 {"departureDes":"", "arrivalDes":"", "departDate":"", "arriveDate":"", "passangers":"1"}
-{"departureDes":"Montreal", "arrivalDes":"Buffalo", "departDate":"11/15/2016", "arriveDate":"11/19/2016", "passangers":"4"}
-{"departureDes":"Buffalo", "arrivalDes":"Seattle", "departDate":"11/09/2016", "arriveDate":"11/23/2016", "passangers":"6"}
-{"departureDes":"Montreal", "arrivalDes":"Los Angeles", "departDate":"11/29/2016", "arriveDate":"11/19/2016", "passangers":"4"}
-{"departureDes":"Montreal", "arrivalDes":"Paris", "departDate":"11/13/2016", "arriveDate":"11/19/2016", "passangers":"5"}
-{"departureDes":"Montreal", "arrivalDes":"Paris", "departDate":"11/16/2016", "arriveDate":"12/02/2016", "passangers":"4"}
-{"departureDes":"Montreal", "arrivalDes":"Los Angeles", "departDate":"", "arriveDate":"", "passangers":"1"}
-{"departureDes":"Montreal", "arrivalDes":"New York", "departDate":"", "arriveDate":"", "passangers":"1"}
+{"departureDes":"", "arrivalDes":"", "departDate":"", "arriveDate":"", "passangers":"1"}
+{"departureDes":"", "arrivalDes":"", "departDate":"", "arriveDate":"", "passangers":"1"}
+{"departureDes":"", "arrivalDes":"", "departDate":"", "arriveDate":"", "passangers":"1"}
+{"departureDes":"", "arrivalDes":"", "departDate":"", "arriveDate":"", "passangers":"1"}
+{"departureDes":"", "arrivalDes":"", "departDate":"11/28/2016", "arriveDate":"11/29/2016", "passangers":"2"}
+{"departureDes":"", "arrivalDes":"", "departDate":"", "arriveDate":"", "passangers":"1"}
+{"departureDes":"", "arrivalDes":"", "departDate":"", "arriveDate":"", "passangers":"1"}
+{"departureDes":"Buffalo", "arrivalDes":"", "departDate":"", "arriveDate":"", "passangers":"1"}
+{"departureDes":"", "arrivalDes":"", "departDate":"11/22/2016", "arriveDate":"11/16/2016", "passangers":"1"}
+{"departureDes":"s", "arrivalDes":"", "departDate":"11/29/2016", "arriveDate":"11/16/2016", "passangers":"1"}
+{"departureDes":"Buffalo", "arrivalDes":"Oslo", "departDate":"11/15/2016", "arriveDate":"12/01/2016", "passangers":"4"}

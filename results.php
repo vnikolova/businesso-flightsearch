@@ -17,7 +17,7 @@
     </style>
 
 </head>
-    
+
 
     <body>
         <!-- Navigation -->
@@ -48,351 +48,304 @@
             </div>
         </nav>
         <!-- Navigation END -->
-        <br><br>
-
-
+        <br><br><br>
         <!-- search results -->
         <div class="container" id="results">
-            <!-- breadcrumb -->
-            <div id="results" class="" style="margin-top: 50px;">
-                <ol class="breadcrumb breadcrumb-arrow">
-                    <li><a href="search.php">Search</a></li>
-                    <li class="active"><span>Select Flight</span></li>
-                    <li class="active" style="opacity: 0.5"><span>Overview</span></li>
-                </ol>
-            </div>
-            <!-- go back btn -->
-            <div class="col-xs-2">
-                <div class="btn btn-info" id="backToSearchBtn">
-                    Go Back
-                </div>
-            </div>
-            <!-- sort by -->
-            <div class="col-xs-1 col-xs-offset-4 center">
-                <label>SORT BY:</label>
-            </div>
-            <!-- sort -> select -->
-            <div class="col-xs-2">
-                <select class="form-control" style="margin-top: -8px;">
-            <option>Best Match</option>
-            <option>Price: Ascending</option>
-            <option>Price: Descending</option>
-          </select>
-            </div>
-            <!-- change preferences -->
-            <div class="col-xs-3">
-                <span class="glyphicon glyphicon-cog"></span>
-                <span>CHANGE PREFERECES</span>
-            </div>
+
         </div>
         <!-- end of the search results -->
-        <br>
+
 
         <!-- choose flights header section begin -->
         <div class="container-fluid">
+          <div class="col-lg-4 col-lg-offset-1">
+
+
+          <div id="results" class="" style="margin-top: 50px;">
+              <ol class="breadcrumb breadcrumb-arrow">
+                  <li><a href="search.php">Search</a></li>
+                  <li class="active"><span>Select Flight</span></li>
+                  <li class="active" style="opacity: 0.5"><span>Overview</span></li>
+              </ol>
+          </div>
+          </div>
             <!-- choose flights header section begin -->
             <div class="" id="chooseFlight">
                 <div class="col-xs-10 col-xs-offset-1">
-                    <h3>Choose Flights</h3>
+                    <h3>Choose Flights</h3> <br>
                 </div>
                 <!-- search combination begin -->
                 <div class="row flight-section">
-                    <div class="col-xs-10 col-xs-offset-1" style="border: 2px solid black;">
-                        <div class="row">
-                            <div class="col-xs-12" id="blue">
+                    <div class="col-xs-10 col-xs-offset-1">
+                        <div class="row" style="border:1px solid black;">
+                          <div class="panel panel-default" >
+                            <div class="panel-heading" style="height:60px;">
+                              <div class="col-lg-4">
+                                <img src="img/departures.png" alt="plane_logo_departure">
+                              </div>
+                              <div class="col-lg-4">
+                                <h3 style="margin-top:5px;">
+                                <?php
+                                $receivedDeparture = $_GET['departureDes'];
+                                    echo $receivedDeparture;
+                                ?>
+                                -
+                                <?php
+                                $receivedArrival = $_GET['arrivalDes'];
+                                    echo $receivedArrival;
+                                ?>
+                                </h3>
+                              </div>
 
-                                <div class="col-lg-1">
-                                    <img src="img/departures.png" alt="plane_logo_departure">
+                            </div>
+                          </div>
+                            <div class="panel-body">
+                              <div class="col-lg-4">
+                                <h3>
+                                <?php
+                                $departureDate = $_GET['departureDate'];
+                                    echo $departureDate;
+                                ?>
+                                </h3>
+                              </div>
+                              <div class="col-lg-4">
+                                <h3> 9:00</h3>
+                              </div>
+                              <div class="col-lg-4">
+                                <h3>300 dkk</h3>
+                              </div>
+                            </div>
+
+                            <!-- arrival -->
+                            <div class="panel panel-default" >
+                              <div class="panel-heading" style="height:60px;">
+                                <div class="col-lg-4">
+                                  <img src="img/arrival.png" alt="plane_logo_departure">
+                                </div>
+                                <div class="col-lg-4">
+                                  <h3 style="margin-top:5px;">
+                                    <?php
+                                    $receivedArrival = $_GET['arrivalDes'];
+                                        echo $receivedArrival;
+                                    ?>
+                                    -
+                                    <?php
+                                    $receivedDeparture = $_GET['departureDes'];
+                                        echo $receivedDeparture;
+                                    ?>
+
+
+                                  </h3>
                                 </div>
 
-                                <div class="col-lg-3">
-                                    <div class="receivedDeparture">
-                                        <h3>
-                                        <?php
-                                        $receivedDeparture = $_GET['departureDes'];
-                                            echo $receivedDeparture;
-                                        ?>
-                                        -
-                                        <?php
-                                        $receivedArrival = $_GET['arrivalDes'];
-                                            echo $receivedArrival;
-                                        ?>
-                                        </h3>
+                              </div>
+                            </div>
+                              <div class="panel-body">
+                                <div class="col-lg-4">
+                                  <h3>
+                                  <?php
+                                  $arrivalDate = $_GET['arrivalDate'];
+                                      echo $arrivalDate;
+                                  ?>
+                                  </h3>
+                                </div>
+                                <div class="col-lg-4">
+                                  <h3> 17:10</h3>
+                                </div>
+                                <div class="col-lg-4">
+                                  <h3>200 dkk</h3>
+                                </div>
+                              </div>
+</div>
+                            <div class="row">
+                                <div class="col-xs-2 col-xs-offset-9">
+                                    <button type="button" class="btn btn-select selectBtn">SELECT</button>
+                                </div>
+                            </div>
+                          </div>
 
-                                    </div>
+</div>
+  <div class="row flight-section">
+      <div class="col-xs-10 col-xs-offset-1">
+                          <div class="row" style="border:1px solid black;">
+                            <div class="panel panel-default" >
+                              <div class="panel-heading" style="height:60px;">
+                                <div class="col-lg-4">
+                                  <img src="img/departures.png" alt="plane_logo_departure">
                                 </div>
-                                 <div class="col-lg-3">
-                                    <div class="receivedDeparture">
-                                        <h3>
-                                        <?php
-                                        $departureDate = $_GET['departureDate'];
-                                            echo $departureDate;
-                                        ?>
-                                        </h3>
-                                    </div>
+                                <div class="col-lg-4">
+                                  <h3 style="margin-top:5px;">
+                                  <?php
+                                  $receivedDeparture = $_GET['departureDes'];
+                                      echo $receivedDeparture;
+                                  ?>
+                                  -
+                                  <?php
+                                  $receivedArrival = $_GET['arrivalDes'];
+                                      echo $receivedArrival;
+                                  ?>
+                                  </h3>
                                 </div>
-                                <div class="col-lg-3">
-                                    <h3>
-                                        09:35
+
+                              </div>
+                            </div>
+                              <div class="panel-body">
+                                <div class="col-lg-4">
+                                  <h3>
+                                  <?php
+                                  $departureDate = $_GET['departureDate'];
+                                      echo $departureDate;
+                                  ?>
+                                  </h3>
+                                </div>
+                                <div class="col-lg-4">
+                                  <h3> 13:00</h3>
+                                </div>
+                                <div class="col-lg-4">
+                                  <h3>250 dkk</h3>
+                                </div>
+                              </div>
+
+                              <!-- arrival -->
+                              <div class="panel panel-default arrivalPanel" >
+                                <div class="panel-heading" style="height:60px;">
+                                  <div class="col-lg-4">
+                                    <img src="img/arrival.png" alt="plane_logo_departure">
+                                  </div>
+                                  <div class="col-lg-4">
+                                    <h3 style="margin-top:5px;">
+                                      <?php
+                                      $receivedArrival = $_GET['arrivalDes'];
+                                          echo $receivedArrival;
+                                      ?>
+                                      -
+                                      <?php
+                                      $receivedDeparture = $_GET['departureDes'];
+                                          echo $receivedDeparture;
+                                      ?>
+
+
                                     </h3>
-                                </div>
-                                <div class="col-lg-2 ">
-                                    <h3>225 dkk</h3>
-                                </div>
+                                  </div>
 
+                                </div>
+                              </div>
+                                <div class="panel-body">
+                                  <div class="col-lg-4">
+                                    <h3>
+                                    <?php
+                                    $arrivalDate = $_GET['arrivalDate'];
+                                        echo $arrivalDate;
+                                    ?>
+                                    </h3>
+                                  </div>
+                                  <div class="col-lg-4">
+                                    <h3> 15:50</h3>
+                                  </div>
+                                  <div class="col-lg-4">
+                                    <h3>185 dkk</h3>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="row">
+                                  <div class="col-xs-2 col-xs-offset-9">
+                                      <button type="button" class="btn btn-select selectBtn">SELECT</button>
+                                  </div>
+                              </div>
                             </div>
                         </div>
 
-                        <div class="row" style="border-top: 2px solid black">
-                            <div class="col-lg-12" id="blue">
-                                <div class="col-lg-1">
-                                    <img src="img/arrival.png" alt="plane_logo_arrival">
-                                </div>
+                        <div class="row flight-section">
+                            <div class="col-xs-10 col-xs-offset-1">
+                                                <div class="row" style="border:1px solid black;">
+                                                  <div class="panel panel-default" >
+                                                    <div class="panel-heading" style="height:60px;">
+                                                      <div class="col-lg-4">
+                                                        <img src="img/departures.png" alt="plane_logo_departure">
+                                                      </div>
+                                                      <div class="col-lg-4">
+                                                        <h3 style="margin-top:5px;">
+                                                        <?php
+                                                        $receivedDeparture = $_GET['departureDes'];
+                                                            echo $receivedDeparture;
+                                                        ?>
+                                                        -
+                                                        <?php
+                                                        $receivedArrival = $_GET['arrivalDes'];
+                                                            echo $receivedArrival;
+                                                        ?>
+                                                        </h3>
+                                                      </div>
 
-                                <div class="col-lg-3">
-                                   <h3>
+                                                    </div>
+                                                  </div>
+                                                    <div class="panel-body">
+                                                      <div class="col-lg-4">
+                                                        <h3>
+                                                        <?php
+                                                        $departureDate = $_GET['departureDate'];
+                                                            echo $departureDate;
+                                                        ?>
+                                                        </h3>
+                                                      </div>
+                                                      <div class="col-lg-4">
+                                                        <h3> 18:00</h3>
+                                                      </div>
+                                                      <div class="col-lg-4">
+                                                        <h3>770 dkk</h3>
+                                                      </div>
+                                                    </div>
 
-                                        <?php
-                                        $receivedArrival = $_GET['arrivalDes'];
-                                            echo $receivedArrival;
-                                        ?>
-                                        -
-                                        <?php
-                                        $receivedDeparture = $_GET['departureDes'];
-                                            echo $receivedDeparture;
-                                        ?>
-                                        
-                                        </h3>
-                                </div>
-                                <div class="col-lg-3">
-                                    <h3>
-                                        <?php
-                                        $arrivalDate = $_GET['arrivalDate'];
-                                            echo $arrivalDate;
-                                        ?>
-                                    </h3>
-                                </div>
+                                                    <!-- arrival -->
+                                                    <div class="panel panel-default" >
+                                                      <div class="panel-heading" style="height:60px;">
+                                                        <div class="col-lg-4">
+                                                          <img src="img/arrival.png" alt="plane_logo_departure">
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                          <h3 style="margin-top:5px;">
+                                                            <?php
+                                                            $receivedArrival = $_GET['arrivalDes'];
+                                                                echo $receivedArrival;
+                                                            ?>
+                                                            -
+                                                            <?php
+                                                            $receivedDeparture = $_GET['departureDes'];
+                                                                echo $receivedDeparture;
+                                                            ?>
 
-                                <div class="col-lg-3">
-                                    <h3>
-                                        17:40
-                                    </h3>
-                                </div>
 
-                                <div class="col-lg-2">
-                                    <h3>400 dkk</h3>
-                                </div>
+                                                          </h3>
+                                                        </div>
 
-                            </div>
-                        </div>
+                                                      </div>
+                                                    </div>
+                                                      <div class="panel-body">
+                                                        <div class="col-lg-4">
+                                                          <h3>
+                                                          <?php
+                                                          $arrivalDate = $_GET['arrivalDate'];
+                                                              echo $arrivalDate;
+                                                          ?>
+                                                          </h3>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                          <h3> 11:10</h3>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                          <h3>980 dkk</h3>
+                                                        </div>
+                                                      </div>
+                                                    </div>
 
-                    </div>
-                    <!-- col -->
-                    <div class="row">
-                        <div class="col-xs-2 col-xs-offset-9">
-                            <button type="button" class="btn btn-info btn-select">Select</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="row flight-section">
-                    <div class="col-xs-10 col-xs-offset-1" style="border: 2px solid black;">
-                        <div class="row">
-                            <div class="col-xs-12" id="blue">
-
-                                <div class="col-lg-1">
-                                    <img src="img/departures.png" alt="plane_logo_departure">
-                                </div>
-
-                                <div class="col-lg-3">
-                                    <div class="receivedDeparture">
-                                        <h3>
-                                        <?php
-                                        $receivedDeparture = $_GET['departureDes'];
-                                            echo $receivedDeparture;
-                                        ?>
-                                        -
-                                        <?php
-                                        $receivedArrival = $_GET['arrivalDes'];
-                                            echo $receivedArrival;
-                                        ?>
-                                        </h3>
-
-                                    </div>
-                                </div>
-                                 <div class="col-lg-3">
-                                    <div class="receivedDeparture">
-                                        <h3>
-                                        <?php
-                                        $departureDate = $_GET['departureDate'];
-                                            echo $departureDate;
-                                        ?>
-                                        </h3>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3">
-                                    <h3>
-                                        13:45
-                                    </h3>
-                                </div>
-                                <div class="col-lg-2 ">
-                                    <h3>130 dkk</h3>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="row" style="border-top: 2px solid black">
-                            <div class="col-lg-12" id="blue">
-                                <div class="col-lg-1">
-                                    <img src="img/arrival.png" alt="plane_logo_arrival">
-                                </div>
-
-                                <div class="col-lg-3">
-                                   <h3>
-
-                                        <?php
-                                        $receivedArrival = $_GET['arrivalDes'];
-                                            echo $receivedArrival;
-                                        ?>
-                                        -
-                                        <?php
-                                        $receivedDeparture = $_GET['departureDes'];
-                                            echo $receivedDeparture;
-                                        ?>
-                                        
-                                        </h3>
-                                </div>
-                                <div class="col-lg-3">
-                                    <h3>
-                                        <?php
-                                        $arrivalDate = $_GET['arrivalDate'];
-                                            echo $arrivalDate;
-                                        ?>
-                                    </h3>
-                                </div>
-
-                                <div class="col-lg-3">
-                                    <h3>
-                                        6:40
-                                    </h3>
-                                </div>
-
-                                <div class="col-lg-2">
-                                    <h3>900 dkk</h3>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <!-- col -->
-                    <div class="row">
-                        <div class="col-xs-2 col-xs-offset-9">
-                            <button type="button" class="btn btn-info btn-select">Select</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row flight-section">
-                    <div class="col-xs-10 col-xs-offset-1" style="border: 2px solid black;">
-                        <div class="row">
-                            <div class="col-xs-12" id="blue">
-
-                                <div class="col-lg-1">
-                                    <img src="img/departures.png" alt="plane_logo_departure">
-                                </div>
-
-                                <div class="col-lg-3">
-                                    <div class="receivedDeparture">
-                                        <h3>
-                                        <?php
-                                        $receivedDeparture = $_GET['departureDes'];
-                                            echo $receivedDeparture;
-                                        ?>
-                                        -
-                                        <?php
-                                        $receivedArrival = $_GET['arrivalDes'];
-                                            echo $receivedArrival;
-                                        ?>
-                                        </h3>
-
-                                    </div>
-                                </div>
-                                 <div class="col-lg-3">
-                                    <div class="receivedDeparture">
-                                        <h3>
-                                        <?php
-                                        $departureDate = $_GET['departureDate'];
-                                            echo $departureDate;
-                                        ?>
-                                        </h3>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3">
-                                    <h3>
-                                        13:30
-                                    </h3>
-                                </div>
-                                <div class="col-lg-2 ">
-                                    <h3>500 dkk</h3>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="row" style="border-top: 2px solid black">
-                            <div class="col-lg-12" id="blue">
-                                <div class="col-lg-1">
-                                    <img src="img/arrival.png" alt="plane_logo_arrival">
-                                </div>
-
-                                <div class="col-lg-3">
-                                   <h3>
-
-                                        <?php
-                                        $receivedArrival = $_GET['arrivalDes'];
-                                            echo $receivedArrival;
-                                        ?>
-                                        -
-                                        <?php
-                                        $receivedDeparture = $_GET['departureDes'];
-                                            echo $receivedDeparture;
-                                        ?>
-                                        
-                                        </h3>
-                                </div>
-                                <div class="col-lg-3">
-                                    <h3>
-                                        <?php
-                                        $arrivalDate = $_GET['arrivalDate'];
-                                            echo $arrivalDate;
-                                        ?>
-                                    </h3>
-                                </div>
-
-                                <div class="col-lg-3">
-                                    <h3>
-                                        8:40
-                                    </h3>
-                                </div>
-
-                                <div class="col-lg-2">
-                                    <h3>200 dkk</h3>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <!-- col -->
-                    <div class="row">
-                        <div class="col-xs-2 col-xs-offset-9">
-                            <button type="button" class="btn btn-info btn-select">Select</button>
-                        </div>
-                    </div>
-                </div>
-
+                                                    <div class="row">
+                                                        <div class="col-xs-2 col-xs-offset-9">
+                                                            <button type="button" class="btn btn-select selectBtn">SELECT</button>
+                                                        </div>
+                                                    </div>
+                                                  </div>
+                                              </div>
             </div>
 
             <!-- footer -->
@@ -421,7 +374,6 @@
         </script>
 
     </body>
-    
+
 
 </html>
-
