@@ -22,7 +22,9 @@
     //login user by setting session id and username
     $_SESSION['username'] = $row['firstname'];
     $_SESSION['id'] = $row['id'];
-    echo "true";
+    $jData = array("response" => "true", "username" => $row['firstname']);
+    $output = json_encode($jData);
+    echo $output;
   	}
   else {
     echo "There has been an error";

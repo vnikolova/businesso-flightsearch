@@ -9,14 +9,13 @@ if(isset($_SESSION['username'])) {
     <title>Businesso - Your business travels organized.</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.min.css">
+    <link rel="stylesheet" type="text/css" href="css/scrolling-nav.css">
+
 </head>
 
 <body>
   <?php include_once "header.html" ?>
-
- <!-- search results -->
-      <div class="container" id="">
 
    <!-- Page Content -->
 <section id="services" class="services-section">
@@ -104,13 +103,19 @@ if(isset($_SESSION['username'])) {
          </div>
       </div>
    </div><!-- /.row -->
+   <br>
+   <div class="row">
+      <div class="col-sm-12">
+        <button type="button"  id="prefButtonSet">SET YOUR FLIGHT PREFERENCIES</button>
+      </div>
+   </div><!-- /.row -->
 
    <div class="preferencies">
         <div class="row" >
         <br>
             <div class="col-sm-4">
                 <img class="img-circle img-responsive img-center" src="./img/airlinemealbig.jpg" alt="food">
-                <h4><strong>Meal preferences</strong></h4>
+                <h4><strong>Meal preferencies</strong></h4>
                 <p>Pick your favourite type of meal. You can alsways change your mealpreferencies in your profile.</p>
                 <div class="form-group">
                       <select class="form-control" id="sel1">
@@ -125,7 +130,7 @@ if(isset($_SESSION['username'])) {
             </div>
             <div class="col-sm-4">
                 <img class="img-circle img-responsive img-center" src="./img/hotel.jpeg" alt="hotels">
-                <h4><strong>Accomodation preferences</strong></h4>
+                <h4><strong>Accomodation preferencies</strong></h4>
                 <p>Annoyed of searching acommodation everytime ? We will do it for you !</p>
                 <div class="form-group">
                       <select class="form-control" id="sel1">
@@ -155,9 +160,9 @@ if(isset($_SESSION['username'])) {
             </div>
             <div class="col-sm-4">
                 <img class="img-circle img-responsive img-center" src="./img/seats.jpg" alt="seats">
-                <h4><strong>Flight seat preferences</strong></h4>
+                <h4><strong>Flight seat preferencies</strong></h4>
                 <p>We want the best seat for you! Pick seat of the preference and we will try to get it for you.</p>
-                <button type="button" class="btn btn-default" id="prefButton">Pick & Save</button>
+                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#seatPickerModal">Pick & Save</button>
             </div>
         </div>
         </div>
@@ -186,23 +191,6 @@ if(isset($_SESSION['username'])) {
 <br>
 </div>
 </div>
-</section><!-- /services .container -->
-
-<br>
-
-
-   <!-- <footer>
-        <div class="footer navbar-fixed-bottom">
-            <ul class="nav navbar-nav">
-            <li><a>About</a></li>
-            <li><a>FAQ</a></li>
-            <li><a>Team</a></li>
-            </ul>
-            <ul class="nav navbar-nav">
-            <li><a>&copy; Copyright 2016 Businesso</a></li>
-            </ul>
-        </div>
-    </footer> -->
 
 <!-- Modal Seat picker-->
    <div class="modal fade" id="seatPickerModal" role="dialog">
@@ -213,7 +201,6 @@ if(isset($_SESSION['username'])) {
           <h4 class="modal-title">Modal Header</h4>
         </div>
         <div class="modal-body">
-          <div w3-include-html="seat_picker.html"</div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -221,18 +208,21 @@ if(isset($_SESSION['username'])) {
       </div>
     </div>
   </div>
+</div>
 
 <!-- Modal Confirmation -->
  <!-- Modal -->
   <div class="modal fade" id="confirmation" role="dialog">
     <div class="modal-dialog">
+
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Confirmation</h4>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" onload="loader()">
+        <div id="loader"></div>
           <div style="display:none;" id="myDiv" class="animate-bottom">
           <h2>SUCCESS!</h2>
           <p>Your order was processed succesfully.</p>
@@ -245,17 +235,41 @@ if(isset($_SESSION['username'])) {
           <button type="button" class="btn btn-default" data-dismiss="modal">Confirm</button>
         </div>
       </div>
+
     </div>
   </div>
-  <!-- modal end -->
+  </section>
+    <!-- /.container -->
+    </div>
 
+     <div class="footer"></div>
 
 <!-- jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="js/script.js"></script>
 
+<script src="js/script.min.js">
+ </script>
+<script type="text/javascript">
+    $("#prefButtonSet").click(function(){
+        $(".preferencies").show();
+    });
+        $("#prefButtonSet").dblclick(function(){
+        $(".preferencies").hide();
+    });
+
+   setTimeout(showPage, 3000);
+
+function showPage() {
+  $("#loader").hide();
+ $("#myDiv").show();
+}
+
+    $(document).ready( function() {
+      $(".footer").load("./footer.html");
+});
+</script>
 
 </body>
 </html>

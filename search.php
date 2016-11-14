@@ -1,140 +1,135 @@
-<?php
-session_start();
-if(isset($_SESSION['username'])) {
 
-?>
 <html>
 <head>
-      <title>Businesso - Your business travels organized.</title>
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<!--my style -->
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css">
-<link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+  <title>Businesso - Your business travels organized.</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!--my style -->
+<link rel="stylesheet" href="css/style.css" media="screen" title="no title"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css">
+<link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
 <style>
 body{
-        background: url('img/background.jpg');
+        background: url('img/airplane.jpg');
+        /*-webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);*/
         background-repeat: no-repeat;
         background-size: cover;
     }
+    .dropdown-toggle{
+      margin-top:35px;
+      background-color: transparent;
+      color: white;
+
+    }
+
 </style>
 </head>
 
 <body>
-
   <?php include_once "header.html" ?>
-  
-        <div class="container" id="content">
+        <div class="container" id="content" >
         	<div class="row">
-        		<div class="col-lg-12 title">
-		            <br><br>
-		            <h1 style="color:white;font-family: 'Paytone One', sans-serif; letter-spacing:4px;">WHERE TO GO ?</h1>
+        		<div class="col-lg-12">
+		            <h1 class="title">WHERE TO GO ?</h1>
 		        </div>
-        	</div>
-        	<div class="row">
-			    <div class="col-lg-4 col-md-offset-4">
-			      	<br>
-			      	<!-- return -->
-			      	<div id="return">
-			      		<div class="btn-group" role="group" aria-label="...">
-						  <button type="button" class="btn btn-default active" id="returbBtn">return</button>
-						  <button type="button" class="btn btn-default" id="onewayBtn">one way</button>
-						</div>
+        	</div><br>
+          <div class="row">
+            <div class="col-lg-6 col-lg-offset-3">
+              <!-- tabs -->
+              <ul class="nav nav-tabs" id="myTab">
+              <li class="active"><a data-toggle="tab" href="#return">return</a></li>
+              <li><a data-toggle="tab" href="#oneway">one way</a></li>
+          </ul>
+          <div class="tab-content">
+              <div id="return" class="tab-pane fade in active">
+                <form class="form-inline">
+                  <!-- return -->
                   <div class="form-group"><br>
                       <!-- departure -->
-                       <div class="inner-addon left-addon">
-                        <img src="img/departures.png" class="glyphicon">
-                        <input type="text" id="departureDes" class="form-control departureDes" placeholder="FROM"/>
-                    </div>
+                        <img src="img/departures.png" class="glyphicon planeIcons">
+                        <input type="text" id="departureDes" class="departureDes active" placeholder="FROM ..."/>
                   </div>
-                  <div class="form-group">
-                     <!-- arrival -->
-                     <div class="inner-addon left-addon">
-                      <img src="img/arrival.png" class="glyphicon">
-                      <input type="text" id="arrivalDes" class="form-control arrivalDes" placeholder="TO"/>
-                    </div>
-                  </div>
-              <form class="form-inline">
-                  <div class="form-group">
-                       <!-- departure date -->
-                       <div class="inner-addon left-addon">
-                        <img src="img/calendar.png" class="glyphicon">
-                          <input id="depart" class="datepicker form-control depart"  placeholder="dd/mm/yy " style="width:150px; height:55px;">
-                      </div>
-                  </div>
-                  <div class="form-group">
-                       <!-- arrival date -->
-                       <div class="inner-addon left-addon">
-                        <img src="img/calendar.png" class="glyphicon">
-                          <input id="arriveDate" class="datepicker form-control arriveDate"  placeholder="dd/mm/yy " style="width:150px;height:55px;">
-                      </div>
-                  </div>
-                   <!-- passangers -->
-                  <div class="form-group" style="margin-left:0px;">
-                      <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                          <select class="selectpicker passNumber" id="passNumber">
-                              <option value="1">1</option>
-                              <option value="2">2</option>
-                              <option value="3">3</option>
-                              <option value="4">4</option>
-                              <option value="5">5</option>
-                              <option value="6">6</option>
-                          </select>
-                      </label>
-                  </div>
-              </form><br>
-               <button type="button" class="btn form-control searchBtn" id="searchBtnReturn">search</button>
-			</div> <!-- end of return -->
-			<div id="oneWay" style="display:none;">
-				<!-- oneway -->
-			      	<div id="return">
-			      		<div class="btn-group" role="group" aria-label="...">
-						  <button type="button" class="btn btn-default" id="returnBtn">return</button>
-						  <button type="button" class="btn btn-default active" id="onewayBtn">one way</button>
-						</div>
+                <div class="form-group" style="margin-top:20px; margin-left:0px; ">
+                   <!-- arrival -->
+                    <img src="img/arrival.png" class="glyphicon planeIcons">
+                    <input type="text" id="arrivalDes" class="arrivalDes" placeholder="TO ... "/>
+                </div>
+                </form>
+            <form class="form-inline">
+                <div class="form-group">
+                     <!-- departure date -->
+                      <img src="img/calendar.png" class="glyphicon planeIcons">
+                        <input type="text" id="depart" class="datepicker depart"  placeholder="DEPARTURE  " style="width:150px; height:55px;">
+                </div>
+                <div class="form-group">
+                     <!-- arrival date -->
+                      <img src="img/calendar.png" class="glyphicon planeIcons">
+                        <input type="text" id="arriveDate" class="datepicker arriveDate"  placeholder="ARRIVAL " style="width:150px;height:55px;">
+                </div>
+                 <!-- passangers -->
+                <div class="form-group" style="margin-left:0px;">
+                    <span class="glyphicon glyphicon-user planeIcons" aria-hidden="true"></span>
+                        <select class="selectpicker passNumber" id="passNumber">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                    </label>
+                </div>
+            </form><br>
+            <button type="button" class="btn form-control searchBtn active" id="searchBtnReturn">SEARCH</button>
 
-                  <div class="form-group"><br>
-                      <!-- departure -->
-                       <div class="inner-addon left-addon">
-                        <img src="img/departures.png" class="glyphicon">
-                        <input type="text" id="departureDesOne" class="form-control departureDes" placeholder="FROM"/>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                     <!-- arrival -->
-                     <div class="inner-addon left-addon">
-                      <img src="img/arrival.png" class="glyphicon">
-                      <input type="text" id="arrivalDesOne" class="form-control arrivalDes" placeholder="TO"/>
-                    </div>
-                  </div>
-              <form class="form-inline">
-                  <div class="form-group">
-                       <!-- departure date -->
-                       <div class="inner-addon left-addon">
-                        <img src="img/calendar.png" class="glyphicon">
-                          <input id="departOne" class="datepicker form-control depart"  placeholder="dd/mm/yy " style="width:150px; height:55px;">
-                      </div>
-                  </div>
-                   <!-- passangers -->
-                  <div class="form-group" style="margin-left:0px;">
-                      <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                          <select class="selectpicker passNumberOne" id="passNumberOne">
-                              <option value="1">1</option>
-                              <option value="2">2</option>
-                              <option value="3">3</option>
-                              <option value="4">4</option>
-                              <option value="5">5</option>
-                              <option value="6">6</option>
-                          </select>
-                      </label>
-                  </div>
-              </form><br>
-               <button type="button" class="btn form-control searchBtn" id="searchBtnOneway">search</button>
-			</div>
-			</div>
-	    </div>
-	</div> <!-- end of the container -->
+              </div>
+              <div id="oneway" class="tab-pane fade">
+                <form class="form-inline">
+                              <div class="form-group"><br>
+                                  <!-- departure -->
+                                    <img src="img/departures.png" class="glyphicon planeIcons">
+                                    <input type="text" id="departureDesOne" class="departureDes" placeholder="FROM ... "/>
+                              </div>
+                              <div class="form-group"  style="margin-top:20px; margin-left:0px; ">
+                                 <!-- arrival -->
+                                  <img src="img/arrival.png" class="glyphicon planeIcons">
+                                  <input type="text" id="arrivalDesOne" class="arrivalDes" placeholder="TO ... "/>
+                              </div>
+                          </form>
+                          <form class="form-inline">
+                              <div class="form-group">
+                                   <!-- departure date -->
+                                    <img src="img/calendar.png" class="glyphicon planeIcons">
+                                      <input type="text" id="departOne" class="datepicker depart"  placeholder="dd/mm/yy " style="width:150px; height:55px;">
+                              </div>
+                               <!-- passangers -->
+                              <div class="form-group" style="margin-left:0px;">
+                                  <span class="glyphicon glyphicon-user planeIcons" aria-hidden="true"style="margin-left:30px;"></span>
+                                      <select class="selectpicker passNumberOne" style="margin-left:5px;" id="passNumberOne">
+                                          <option value="1">1</option>
+                                          <option value="2">2</option>
+                                          <option value="3">3</option>
+                                          <option value="4">4</option>
+                                          <option value="5">5</option>
+                                          <option value="6">6</option>
+                                      </select>
+                                  </label>
+                              </div>
+                            </form>
+                            <br>
+                            <button type="button" class="btn form-control searchBtn active" id="searchBtnOneway">SEARCH</button>
+              </div>
+          </div>
+          </div>
+        </div>
+        </div>
+
+
+	     </div> <!-- end of the container -->
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -149,8 +144,3 @@ body{
 </body>
 
 </html>
-<?php
-  } else {
-      header("location:login.html");
-  }
-?>

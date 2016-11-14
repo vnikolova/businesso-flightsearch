@@ -19,19 +19,14 @@ $( document ).ready(function() {
       type: "POST",
       url: "php/register.php",
       data: $('#registerForm').serialize(),
-      success: function(data){
-        console.log(data);
-        if(data == "true"){
+      success: function(){
           //user is registered and logged in
           // go to account settings
           window.location.assign("account-settings.php");
-          console.log('success');
-       }
-       else{
-        console.log('error');
-       }
      }
     });
+
+    return false;
   });
 
 // on log in
