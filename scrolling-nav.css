@@ -79,52 +79,24 @@ of those sections to manage the look and feel of the site. */
     font-size: 70px;
     font-family: 'Kanit', sans-serif;
 }
-.services-section {
-    height: 100%;
-    padding-top: 150px;
-    text-align: center;
-    background: #fff;
-}
-
-    @media(max-width:324px) {
-
-        .intro-section{
-            padding-top: 100px;
-        }
-        #motto{
-            font-size:50px;
-        }
-
-        .services-section{
-            padding-top: 10px;
-        }
-        
-}
 
 .navbar-center {
     text-align: center;
 }
 
 .about-section {
-    height: 100%;
-    padding-top: 150px;
+    padding-top: 100px;
     text-align: center;
     background: #eee;
 }
 
-
-
-.footer {
-/*    position: static;*/
-    display: flex;
-    justify-content: center;
-/*    margin-top: -60px;*/
-/*    height: 60px;*/
-    background-color: black;
+.services-section {
+  padding-top: 50px;
+    padding-bottom: 50px;
     text-align: center;
-    text-decoration: none;
-    color: white;
+    background: #fff;
 }
+
 
 .navbar-nav>li>a {
     color: white;
@@ -269,4 +241,18 @@ of those sections to manage the look and feel of the site. */
 .backToSearch {
     font-size: 12px;
     text-transform: uppercase;
+}
+
+@media screen and (max-width: 768px) {
+  .intro-section{
+    padding-top: 50px;
+  }
+
+  #motto {
+    font-size: 55px;
+  }
+}
+
+.navbar-inverse .navbar-nav>li>a {
+  color:white;
 }
