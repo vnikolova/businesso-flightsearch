@@ -1,6 +1,9 @@
 body{
 background-image: url("./img/airplane.jpg");
 }
+.video-container {
+  display: block !important;
+}
 /* overview page */
 .services-section {
     height: 100%;

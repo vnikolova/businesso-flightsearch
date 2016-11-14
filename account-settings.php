@@ -22,6 +22,9 @@
 
       <!-- section one - personal info -->
     	<fieldset>
+
+        We need just a few things to set up your profile. Fill in or leave blank for now.
+        You have full control of your profile.
     		<h2 class="fs-title">Travel Information</h2>
           <!-- personal information -->
           <div class="personalInformation">
@@ -37,6 +40,7 @@
             </div>
           </div> <!-- end of personal information -->
     		<input type="button" name="next" class="next action-button" value="Next" />
+        <a href="search.php">Skip for now</a>
     	</fieldset>
 
 <!-- section two - flight destination -->

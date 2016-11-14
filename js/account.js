@@ -79,19 +79,14 @@ $(document).on('submit','#msForm', function(){
     type: "POST",
     url: "php/account.php",
     data: $('#msForm').serialize(),
-    success: function(data){
-      console.log(data);
-      if(data.response == "true"){
+    success: function(){
         //user is registered and logged in
         // go to account settings
         window.location.assign("search.php");
         console.log('success');
-     }
-     else{
-      console.log('error');
-     }
    }
   });
+  return false;
 });
 
 });
