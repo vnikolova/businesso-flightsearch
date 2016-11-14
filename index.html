@@ -1,69 +1,155 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Businesso - Your business travels organized.</title>
-    <link href="css/prettify.css" rel="stylesheet" />
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="css/demo.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Businesso</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="./css/scrolling-nav.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Coda:800|Kanit:700" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
-<body>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container wraper">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">
-                  <p style="letter-spacing:2px;text-transform: uppercase;"><img src="img/paper-airplane-icon.png" alt="businesso_logo">Businesso</p>
-
-                </a>
+                <label href="#page-top"><img id="logo" src="./img/paper-airplane-icon.png" /><a class="navbar-brand page-scroll"></a>BUSINESSO</label>
             </div>
+
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                  <li><a href="#"><span class="glyphicon glyphicon-user"></span> John Mauyer</a></li>
-                  <li><a href="#"><span class="glyphicon glyphicon-chevron-down"></span></a></li>
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services">ABOUT</a>
+                    </li>
+                    <li>
+                        <a id="loginText" class="page-scroll" href="login.html">LOGIN</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
-    <div class="container" id="content">
+
+    <!-- Intro Section -->
+    <section id="intro" class="intro-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 id="motto">WE MIND YOUR BUSINESS</h1>
+                    <h3>Why to search for flight when we can do it for you !</h3>
+                    <br>
+                    <a class="btn btn-default page-scroll" href="index.html">Get started</a>
+                </div>
+            </div>
     </div>
-      <div class="panel-footer">
-        <p style="text-align:center; padding:15px;">Copyright &copy; Businesso 2016 Copenhagen</p>
-        <div id="footer" style="margin-top:-20px;">
-            <a href="#"> Contact </a>|
-            <a href="#"> FAQ </a>|
-            <a href="#"> About </a>
+    </section>
+
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>ABOUT BUSINESSO</h1>
+                    <hr>
+                    <br>
+                    <p>The biggest ticket seller in the WonderLand, the company businesso.com Ltd., was established in 2016 as the first online ticket seller, accommodation, travel insurance and ancillary products traveler. Businesso.com represents for our clients intelligent solutions available 24hours a day, 7 days a week. All at the best prices in the market in advance and guaranteed high quality.</p>
+                    <br>
+                    <p>The businesso portal has been designed to meet the needs of business traveler, who travel to the same place's frequently. Air ticket, hotel and transportation from the airport is available non-stop. The client is able to find everything they need for their jorney in the comfort of your home or office.</p>
+                    <br>
+                    <p>The businesso is searching for most fitting air ticket, based on the preferencies of the user. Once you make profile, you don't need to search anything.</p>
+                    <p>Businesso will do it for you !</p>
+                    <br>
+                    <br>
+                </div>
+
+                <div class="row">
+                <br>
+                <div class="col-lg-12">
+                <div class="col-lg-5 feedback">
+                <br>
+                 <p>"I am traveling to Brusel each week because of the business matters. This portal has been unbelievable useful to me. It remember what my favourite hotels, always find the cheapest and quickest flight!"</p>
+                 <label id="label_img"><img id="user_feedback_img" src="./img/user.svg"/> Matte Nielsen</label>
+                 <br>
+                 </div>
+                 <div class="col-lg-5 col-lg-offset-2 feedback">
+                 <br>
+                 <p>"I am traveling to Brusel each week because of the business matters. This portal has been unbelievable useful to me. It remember what my favourite hotels, always find the cheapest and quickest flight!"</p>
+                 <label id="label_img"><img id="user_feedback_img" src="./img/user.svg"/> Robert Hansen</label>
+                 <br>
+                </div>
+                </div>
+                </div>
+            </div>
         </div>
-    </div>
-    </div>
+    </section>
 
-<!-- jquery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<!-- typeahead plugin -->
-<script src="js/bootstrap-typeahead.js" type="text/javascript"></script>
-<!-- cities list -->
-<script src="js/demo.js" type="text/javascript"></script>
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<!-- date picker -->
-<script src="js/bootstrap-datepicker.js"></script>
+    <footer>
+        <div class="footer navbar-fixed-bottom">
+            <ul class="nav navbar-nav">
+            <li><a>About</a></li>
+            <li><a>FAQ</a></li>
+            <li><a>Team</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+            <li><a>&copy; Copyright 2016 Businesso</a></li>
+            </ul>
 
-<script>
-$(document).ready(function(){
-  $("#content").load("search.html");
-})
 
-</script>
+        </div>
+    </footer>
+
+
+
+
+
+
+    <!-- jQuery -->
+    <script src="./js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="./js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="./js/jquery.easing.min.js"></script>
+    <script src="./js/scrolling-nav.js"></script>
+
 </body>
+
 </html>

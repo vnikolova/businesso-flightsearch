@@ -61,9 +61,9 @@ background-color: #222222;
   float:right;
   margin-right:20px;
 }
-nav{
+/*nav{
   height: 70px;
-}
+}*/
 .dropdown-toggle{
   margin-top:20px;
   background-color: transparent;
@@ -112,7 +112,9 @@ h4{
    width:400px;
    letter-spacing: 2px;
   }
-
+.searchTitle{
+  color:#4ed0d1;
+}
 input[type="text"]{
 height:50px;
 /*border: 2px solid black;*/
@@ -153,8 +155,9 @@ height:50px;
 .right-addon input { padding-right: 60px; }
 
 .title{
-	margin-top: 100px;
+	margin-top: 40px;
   text-align: center;
+
 }
 .footer, .push {
 height: 5em;
@@ -270,8 +273,8 @@ text-align: center;
 }
 
 #blue{
-	background-color: mediumturquoise;
-  padding: 10px;
+/*	background-color: mediumturquoise;
+*/  padding: 10px;
 }
 
 #grey{
