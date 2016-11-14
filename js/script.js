@@ -1,70 +1,5 @@
   $( document ).ready(function() {
 
-  // register bottom
-  $(document).on("click", "#registerBtn", function(){
-     register()
-  });
-  function register(){
-    $("#login").hide();
-    $("#register").show();
-  }
-
-  // login bottom
-  $(document).on("click", "#loginBtn", function(){
-     login()
-  });
-  function login(){
-    $("#login").show();
-    $("#register").hide();
-  }
-
-
-  // submit
-  $(document).on("click", "#submitBtn", function(){
-    //email and password value
-    var username = $("#username").val();
-    var email = $("#email").val();
-    var password = $("#password").val();
-
-    console.log(username, password, email);
-
-
-      localStorage.setItem('name', username);
-      localStorage.setItem('email', email);
-      localStorage.setItem('password', password);
-
-      submitBtn();
-
-  });
-
-  function submitBtn(){
-    $("#register").hide();
-    $("#login").hide();
-    $("#alert").show();
-  }
-
-  // sign up
-  $(document).on("click", "#signUpBtn", function(){
-
-   // stored data from the register-form
-      var storedName = localStorage.getItem('name');
-      var storedPw = localStorage.getItem('email');
-      var storedPw = localStorage.getItem('password');
-
-      // entered data from the login-form
-      var userName =  $("#usernameLog").val();
-      var userPw = $("#passwordLog").val();
-
-      // check if stored data from register-form is equal to data from login form
-      if(userName == storedName && userPw == storedPw) {
-          window.location.assign("search.html");
-          $("#chooseFlight").hide();
-
-      }else {
-          alert('incorrect username or password');
-      }
-    });
-
     // oneWayBtn
     $(document).on("click", "#onewayBtn", function(){
       $("#return").hide();
@@ -80,6 +15,8 @@
     // searc btn return
     $(document).on("click", "#searchBtnReturn", function(){
       console.log("x");
+      // $("#searchBtnOneWay").css("background-color", "yellow");
+
       // take values
       var departureDes = $("#departureDes").val();
       var arrivalDes = $("#arrivalDes").val();
@@ -87,29 +24,34 @@
       var arrivalDate = $("#arriveDate").val();
       var passangersnumber = $("#passNumber").val();
 
-      var linkToApi = 'api.php?command=return&departureDes='+departureDes+'&arrivalDes='+arrivalDes+'&departureDate='+departureDate+'&arrivalDate='+arrivalDate+'&passangersnumber='+passangersnumber;
+      window.location.href= 'results.php?departureDes='+departureDes+'&arrivalDes='+arrivalDes+'&departureDate='+departureDate+'&arrivalDate='+arrivalDate+'&passangersnumber='+passangersnumber;
       console.log(linkToApi);
       $.getJSON(linkToApi, function(jData){
         // console.log(jData);
           });
 
-      $("#content").load("results.html");
+      // $("#content").load("results.php");
     });
+
     // search btn one way
     $(document).on("click", "#searchBtnOneway", function(){
       // take values
-      var departureDesOne = $("#departureDesOne").val();
-      var arrivalDesOne = $("#arrivalDesOne").val();
-      var departOne = $("#departOne").val();
-      var passNumberOne = $("#passNumberOne").val();
+      var departureDes = $("#departureDesOne").val();
+      var arrivalDes = $("#arrivalDesOne").val();
+      var departureDate = $("#departOne").val();
+      // var arrivalDate = $("#arriveDate").val();
+      var passangersnumber = $(".passNumber").val();
+      console.log(departureDes);
 
-      var linktoApi = 'api.php?command=oneway&departureDesOne='+departureDesOne+'&arrivalDesOne='+arrivalDesOne+'&departOne='+departOne+'&passNumberOne='+passNumberOne; 
-      console.log(linktoApi);
-      $.getJSON(linktoApi, function(jData){
-        // console.log(jData);
-          });
-      $("#content").load("results.html");
+      window.location.href= 'resultsOneway.php?departureDes='+departureDes+'&arrivalDes='+arrivalDes+'&departureDate='+departureDate+'&passangersnumber='+passangersnumber;
+      // console.log(linktoApi);
+      // $.getJSON(linktoApi, function(jData){
+      //   // console.log(jData);
+      //     });
+      // $("#content").load("results.php");
     });
+
+
 
     // datepicker
   $(function () {
@@ -123,31 +65,36 @@
 
 
   // });
-  // //display values from localhost 
+  // //display values from localhost
   // document.getElementById("displayedUser").innerHTML = localStorage.getItem("name");
   // document.getElementById("displayedName").innerHTML = localStorage.getItem("name");
   // document.getElementById("displayedEmail").innerHTML = localStorage.getItem("email");
   // document.getElementById("displayedPass").innerHTML = localStorage.getItem("password");
 
-   $("#results").hide();  
-  $(document).on("click", "#loginSubmitted", function(){
-   loginSubmitted();
-  });
-  function loginSubmitted(){
-    $("#alert").hide();
-    $("#login").show();
-  }
 
-  });
 
   $(document).on("click", ".btn-select", function(){
-     window.location.assign("overview.html");
+     window.location.assign("overview.php");
   });
   $(document).on("click", "#backToSearchResultsBtn", function(){
-     window.location.assign("index.html");
+     window.location.assign("login.html");
   });
-  $(document).on("click", "#logOut", function(){
-  	
+
+  $(document).on("click", "#logOutBtn", function(e){
+    e.preventDefault();
+    $.ajax({
+        type:"POST",
+        url:"php/logout.php",
+        data:'',
+        dataType:'html',
+        context:document.body,
+        global:false,
+        async:false,
+        success:function(data){
+            console.log(data);
+            window.location.assign("login.html");
+        }
+    });
   });
   $(document).on("click", "#backToSearchBtn", function(){
   	$("#search").show();
@@ -164,7 +111,7 @@
   })
 
   $(".btn-select").click(function() {
-    $("#content").load("overview.html");
+    $("#content").load("overview.php");
   })
 
   function displayResult(item, val, text) {
@@ -246,7 +193,7 @@
 
   });
 
-  // search destination 
+  // search destination
   var substringMatcher = function(strs) {
     return function findMatches(q, cb) {
       var matches, substrRegex;
@@ -269,9 +216,9 @@
     };
   };
 
-  // results go back 
+  // results go back
   $("#backToSearchBtn").click(function(){
-       window.location.assign("search.html");
+       window.location.assign("search.php");
   });
 
   ////////////////////////// ACCOUNT SETTINGS ///////////////////////////
@@ -343,9 +290,63 @@
 
   $("#popover").popover({ trigger: "hover" });
 
-  // sumbit payment 
+  // sumbit payment
   $(document).on("click", "#submitPaymentBtn", function(){
-     window.location.assign("confirmation.html");
+     window.location.assign("confirmation.php");
   });
 
+$("#popover").popover({ trigger: "hover" });
 
+$(function() {
+
+    // switch for one way
+  $("#returnOn").on("click",function(e) {
+    e.preventDefault();
+    $("#return").hide();
+    $("#oneWay").show();
+  });
+  // switch for return
+  $("#returnOff").on("click",function(e) {
+    e.preventDefault();
+    $("#return").show();
+    $("#oneWay").hide();
+  });
+
+$("#popover").popover({ trigger: "hover" });
+
+
+$("#results").hide();
+
+// search btn
+$(document).on("click", "#searchBtn", function(){
+  $("#search").hide();
+  $("#results").show();
+  $("#chooseFlight").show();
+});
+$(document).on("click", ".btn-select", function(){
+   window.location.assign("overview.php");
+});
+$(document).on("click", "#backToSearchResultsBtn", function(){
+   window.location.assign("login.html");
+});
+
+$(document).on("click", "#backToSearchBtn", function(){
+	$("#search").show();
+	$("#results").hide();
+});
+
+
+
+$(".flight-section").mouseover(function(){
+  $(this).find(".btn-select").css("display", "block");
+})
+$(".flight-section").mouseout(function(){
+  $(this).find(".btn-select").css("display", "none");
+})
+
+$(".btn-select").click(function() {
+  $("#content").load("overview.php");
+})
+
+});
+});
